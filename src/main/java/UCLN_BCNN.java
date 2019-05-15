@@ -13,7 +13,7 @@ public class UCLN_BCNN {
                 }
             }
         }
-        else if(b < a) {
+        if(b < a) {
             for(int i = b; i >= 1; --i) {
                 if(a % i == 0 && b % i == 0) {
                     return i;

@@ -13,5 +13,6 @@ public class UCLN_BCNNTEST {
         assertEquals(new UCLN_BCNN().find_UCLN(30,18), 6);
         assertEquals(new UCLN_BCNN().find_UCLN(6,6), 6);
         assertEquals(new UCLN_BCNN().find_UCLN(5,6), 1);
+        assertEquals(new UCLN_BCNN().find_UCLN(42,56), 14);
     }
 }
