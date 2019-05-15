@@ -30,12 +30,14 @@ public class UCLN_BCNN {
             index = a;
             check = false;
         }
-        else if(a < b){
-            index = b;
-            check = true;
-        }
-        else {
-            return a;
+        else{
+            if(a < b){
+                index = b;
+                check = true;
+            }
+            else {
+                return a;
+            }
         }
         int jump = 1;
         for(int i = index; ; i *= jump ) {
