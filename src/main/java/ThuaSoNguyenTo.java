@@ -12,7 +12,10 @@ public class ThuaSoNguyenTo {
     }
 
     public String phanTichThuaSoNguyenTo(int number) {
-        int arr[] = new int[200];
+        if (number == 0) {
+            return "";
+        }
+        int[] arr = new int[200];
         int index = 0;
         while (number != 1) {
             for(int i = 2; i <= number; i++) {
