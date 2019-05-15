@@ -15,15 +15,15 @@ public class ThuaSoNguyenToBai4 {
         }
         int[] arr = new int[200];
         int index = 0;
-        int ij = 2;
+        int x = 2;
         while (number != 1){
-            if(number % ij == 0) {
-                arr[index++] = ij;
-                number /= ij;
+            if(number % x == 0) {
+                arr[index++] = x;
+                number /= x;
             }
             else
             {
-                ij++;
+                x++;
             }
         }
 
