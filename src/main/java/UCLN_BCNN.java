@@ -20,7 +20,6 @@ public class UCLN_BCNN {
                 }
             }
         }
-
         return a;
     }
 
@@ -31,9 +30,12 @@ public class UCLN_BCNN {
             index = a;
             check = false;
         }
-        else {
+        else if(a < b){
             index = b;
             check = true;
+        }
+        else {
+            return a;
         }
         int jump = 1;
         for(int i = index; ; i *= jump ) {
