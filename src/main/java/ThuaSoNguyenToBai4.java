@@ -9,16 +9,21 @@ public class ThuaSoNguyenToBai4 {
     }
 
     public String phanTichThuaSoNguyenTo(int number) {
-        int arr[] = new int[200];
+        if(number < 2)
+        {
+            return "";
+        }
+        int[] arr = new int[200];
         int index = 0;
-        while (number != 1) {
-            for(int i = 2; i <= number; i++) {
-                if(number % i == 0) {
-                    //System.out.print(i + "*");
-                    arr[index++] = i;
-                    number /= i;
-                    break;
-                }
+        int ij = 2;
+        while (number != 1){
+            if(number % ij == 0) {
+                arr[index++] = ij;
+                number /= ij;
+            }
+            else
+            {
+                ij++;
             }
         }
 
