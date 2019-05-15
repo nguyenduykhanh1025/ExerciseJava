@@ -18,23 +18,24 @@ public class ThuaSoNguyenTo {
         }
         int[] arr = new int[200];
         int index = 0;
-        do {
-            for(int i = 2; i <= number; i++) {
-                if(number % i == 0) {
-                    arr[index++] = i;
-                    number /= i;
-                    break;
+        int i = 2;
+        while (number != 1){
+            if(number % i == 0) {
+                arr[index++] = i;
+                number /= i;
                 }
+            else
+            {
+                i++;
             }
-        }while (number > 1);
+        }
         String strResurt = "";
-        for(int i = 0; i< index - 1; ++i) {
-            strResurt = strResurt + arr[i] + "*";
+        for(int j = 0; j< index - 1; ++j) {
+            strResurt = strResurt + arr[j] + "*";
         }
         strResurt = strResurt + arr[index - 1];
 
         return strResurt;
 
     }
-
 }
