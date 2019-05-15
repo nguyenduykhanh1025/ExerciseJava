@@ -46,5 +46,4 @@ public class ThuaSoNguyenToBai4 {
         strResurt = strResurt.substring(0, strResurt.length() - 1);
         return  strResurt;
     }
-
 }
