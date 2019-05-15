@@ -7,7 +7,6 @@ public class ThuaSoNguyenToBai4 {
         }
         return sum;
     }
-
     public String phanTichThuaSoNguyenTo(int number) {
         if(number < 2)
         {
@@ -26,12 +25,15 @@ public class ThuaSoNguyenToBai4 {
                 x++;
             }
         }
-
         String strResurt = "";
+        boolean check;
         for(int i = 0; i< index; ++i) {
-
+            if(i == 0) {
+                strResurt = strResurt + arr[i] + "^" + getSampleOfNumberInArr(arr,index,arr[i]) + "*";
+                continue;
+            }
             // check da co trc do chua
-            boolean check = false;
+            check = false;
             for(int j = i - 1; j>= 0; --j) {
                 if(arr[i] == arr[j]) {
                     // da check qua roi
@@ -39,7 +41,7 @@ public class ThuaSoNguyenToBai4 {
                     break;
                 }
             }
-            if(check == false || i == 0) {
+            if(check == false ) {
                 strResurt = strResurt + arr[i] + "^" + getSampleOfNumberInArr(arr,index,arr[i]) + "*";
             }
         }
