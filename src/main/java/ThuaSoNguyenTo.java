@@ -17,7 +17,7 @@ public class ThuaSoNguyenTo {
         }
         int[] arr = new int[200];
         int index = 0;
-        while (number != 1) {
+        while (number > 1) {
             for(int i = 2; i <= number; i++) {
                 if(number % i == 0) {
                     //System.out.print(i + "*");
