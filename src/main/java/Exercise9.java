@@ -16,9 +16,4 @@ public class Exercise9 {
         } while (old - ne > 0.0001);
         return String.format("%.4f", pi);
     }
-
-    public static void main(String []args)
-    {
-        System.out.println(new Exercise9().getPi());
-    }
 }
