@@ -14,7 +14,6 @@ public class Exercise9 {
             pi = pi + 4 / (2 * i + 1.0);
             ne = 4 / (2 * i++ + 1.0);
         } while (old - ne > 0.0001);
-        System.out.println("adsasd");
         return String.format("%.4f", pi);
     }
 }
