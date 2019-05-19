@@ -1,33 +1,32 @@
-import java.text.DecimalFormat;
+import java.math.BigInteger;
 
 public class Bai13 {
 
-    public int layGiaThua(int n)
-    {
-        if(n<=1){
-            return 1;
+    public BigInteger layGiaThua(int n) {
+        BigInteger p = new BigInteger("1");
+        if (n <= 1) {
+            return p;
         }
-        int p = 1;
-        for(int i = 2; i<=n; ++i) {
-            p = p*i;
+        for (int i = 2; i <= n; ++i) {
+            BigInteger index = new BigInteger(String.format("%d", i));
+            p = p.multiply(index);
         }
         return p;
     }
-    public String getResurt(){
-        DecimalFormat df = new DecimalFormat("#.000000");
-        double resurt = 2.0;
-        double old = resurt;
-        for(int i = 2;;i++)
-        {
-            resurt += 1.0/layGiaThua(i);
-            double ne = 1.0/layGiaThua(i);
-            if(old - ne <= 0.00001)
-            {
-                break;
-            }
-            old = ne;
 
-        }
-        return df.format(resurt);
+    public String tinhTongE() {
+        double result = 2.0;
+        double oldValue = result, newValue = 0.0;
+        int i = 2;
+        do {
+            if (newValue != 0.0) {
+                oldValue = newValue;
+            }
+            result += 1.0 / layGiaThua(i).longValue();
+            newValue = 1.0 / layGiaThua(i).longValue();
+            i++;
+
+        } while (oldValue - newValue > 0.00001);
+        return String.format("%.6f", result);
     }
 }
