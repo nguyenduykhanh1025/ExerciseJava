@@ -1,28 +1,24 @@
-import java.text.DecimalFormat;
-
 public class Exercise9 {
 
     public String getPi() {
-        DecimalFormat df = new DecimalFormat("#.0000");
-        double pi = 4;
+
+        String str;
+        double pi = 4, ne = 0;
         double old = pi;
-       for (int i = 1; ; ++i)
-       {
-           if(i % 2 != 0){
-               pi = pi - (4/(2*i + 1.0));
-           }
-           else{
-               pi = pi + 4/(2*i + 1.0);
-           }
-           double ne = 4/(2*i + 1.0);
+        int i = 1;
 
-           if(old - ne <= 0.0001)
-           {
-               break;
-           }
-           old = ne;
-       }
+        do {
+            pi = pi - (4 / (2 * i + 1.0));
+            old = 4 / (2 * i++ + 1.0);
 
-       return df.format(pi);
+            pi = pi + 4 / (2 * i + 1.0);
+            ne = 4 / (2 * i++ + 1.0);
+        } while (old - ne > 0.0001);
+        return String.format("%.4f", pi);
+    }
+
+    public static void main(String []args)
+    {
+        System.out.println(new Exercise9().getPi());
     }
 }
