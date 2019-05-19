@@ -22,8 +22,8 @@ public class Bai13 {
             if (newValue != 0.0) {
                 oldValue = newValue;
             }
-            result += 1.0 / layGiaThua(i).longValue();
             newValue = 1.0 / layGiaThua(i).longValue();
+            result += newValue;
             i++;
 
         } while (oldValue - newValue > 0.00001);

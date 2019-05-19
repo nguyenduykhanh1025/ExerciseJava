@@ -5,7 +5,7 @@ import java.math.BigInteger;
 import static org.junit.Assert.assertEquals;
 public class Bai13Test {
     @Test
-    public void test_Bai13() {
+    public void test_tinhTongE() {
         assertEquals(new Bai13().tinhTongE(), "2.718282");
     }
     @Test
