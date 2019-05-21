@@ -2,31 +2,17 @@ import java.math.BigInteger;
 
 public class Bai13 {
 
-    public BigInteger layGiaThua(int n) {
-        BigInteger p = new BigInteger("1");
-        if (n <= 1) {
-            return p;
-        }
-        for (int i = 2; i <= n; ++i) {
-            BigInteger index = new BigInteger(String.format("%d", i));
-            p = p.multiply(index);
-        }
-        return p;
-    }
-
-    public String tinhTongE() {
-        double result = 2.0;
-        double oldValue = result, newValue = 0.0;
-        int i = 2;
+    public double tinhTongE() {
+        double result = 1.0, resultOld = 0;
+        int i = 0, pre = 1;
         do {
-            if (newValue != 0.0) {
-                oldValue = newValue;
+            if (i != 0) {
+                resultOld = result;
             }
-            newValue = 1.0 / layGiaThua(i).longValue();
-            result += newValue;
             i++;
-
-        } while (oldValue - newValue > 0.00001);
-        return String.format("%.6f", result);
+            pre = pre * i;
+            result += Math.pow(pre, -1.0);
+        } while (result - resultOld > 0.000001);
+        return result;
     }
 }
