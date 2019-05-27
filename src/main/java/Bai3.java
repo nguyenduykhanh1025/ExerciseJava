@@ -20,6 +20,4 @@ public class Bai3 {
         int lenString = strResult.length();
         return strResult.delete(lenString - 1, lenString).toString();
     }
-    public static void main(String []ar){
-    }
 }
