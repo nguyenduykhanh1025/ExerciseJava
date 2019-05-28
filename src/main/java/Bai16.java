@@ -28,7 +28,4 @@ public class Bai16 {
         }
         return strResult.toString();
     }
-    public static void main(String []a){
-        System.out.println(new Bai16().findInfomationOfTriangle(-11,2,13,-4,4,11));
-    }
 }
