@@ -13,7 +13,7 @@ public class Bai15Test {
         assertEquals(new Bai15().findInfomationOfTriangle(4,4,3),"11.0 65.66582063752801 can");
         assertEquals(new Bai15().findInfomationOfTriangle(4,3,4),"11.0 65.66582063752801 can");
         assertEquals(new Bai15().findInfomationOfTriangle(3,4,5),"12.0 77.76888838089432 vuong");
-        assertEquals(new Bai15().findInfomationOfTriangle(4,3,5),"12.0 77.76888838089432 vuong");
+        assertEquals(new Bai15().findInfomationOfTriangle(4,5,3),"12.0 77.76888838089432 vuong");
         assertEquals(new Bai15().findInfomationOfTriangle(5,4,3),"12.0 77.76888838089432 vuong");
 
     }
