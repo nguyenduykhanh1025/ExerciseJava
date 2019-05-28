@@ -10,7 +10,7 @@ public class Bai16 {
         double c = getLengthDistance(x3, y3, x2, y2);
         StringBuffer strResult = new StringBuffer("");
         if ((a + b) <= c || (b + c) <= a || (a + c) <= b) {
-            return "khong phai la tam giac";
+            strResult.append("khong phai la tam giac");
         } else {
             double p = a + b + c;
             strResult.append(p + " ");
