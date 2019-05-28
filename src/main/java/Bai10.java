@@ -7,7 +7,8 @@ public class Bai10 {
     public double findPi() {
         double pi = 3;
         int i = 2;
-        double valueNext = findFn(i);
+        double valueAtFnI = findFn(i);
+        double valueNext = valueAtFnI;
         double distance = 3 - valueNext;
         while (distance >= 0.00001) {
             if (i % 4 != 0) {
@@ -16,8 +17,9 @@ public class Bai10 {
                 pi -= valueNext;
             }
             i += 2;
-            distance = valueNext - findFn(i);
-            valueNext = findFn(i);
+            valueAtFnI = findFn(i);
+            distance = valueNext - valueAtFnI;
+            valueNext = valueAtFnI;
         }
 
         return pi;
