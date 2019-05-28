@@ -3,7 +3,7 @@ public class Bai15 {
     public String findInfomationOfTriangle(int a, int b, int c) {
         StringBuffer strResult = new StringBuffer("");
         if ((a + b) < c || (b + c) < a || (a + c) < b) {
-            return "khong phai la tam giac";
+            strResult.append("khong phai la tam giac");
         } else {
             double p = a + b + c;
             strResult.append(p + " ");
