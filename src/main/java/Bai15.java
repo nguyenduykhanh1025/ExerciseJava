@@ -11,7 +11,7 @@ public class Bai15 {
             double S = Math.sqrt(p * (p - a) * (p - b) * (p - c));
             strResult.append(S + " ");
 
-            if (a * a + b * b == c * c || b * b + c * c == a * a || a * a + c * c == b * b) {
+            if ((a * a + b * b == c * c) || (b * b + c * c == a * a) || (a * a + c * c == b * b)) {
                 strResult.append("vuong");
             } else if (a == b || a == c || b == c) {
                 strResult.append("can");
