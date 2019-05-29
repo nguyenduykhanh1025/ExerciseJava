@@ -22,7 +22,7 @@ public class Bai19 {
         StringBuffer strResult = new StringBuffer("");
         strResult.append("1 ");
         if (n == 1) {
-            return strResult.toString();
+            return strResult.toString().trim();
         }
 
         for (int i = 1; i < n - 1; ++i) {
@@ -31,5 +31,7 @@ public class Bai19 {
         strResult.append("1");
         return strResult.toString();
     }
-
+    public static void main(String []a){
+        System.out.println(new Bai19().getTrianglePascalAtN(1));
+    }
 }

@@ -20,5 +20,6 @@ public class Bai19Test {
     public void test_getTrianglePascalAtN(){
         assertEquals(new Bai19().getTrianglePascalAtN(3),"1 2 1");
         assertEquals(new Bai19().getTrianglePascalAtN(0),"err");
+        assertEquals(new Bai19().getTrianglePascalAtN(1),"1");
     }
 }
