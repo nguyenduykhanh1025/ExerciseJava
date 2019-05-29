@@ -31,7 +31,4 @@ public class Bai19 {
         strResult.append("1");
         return strResult.toString();
     }
-    public static void main(String []a){
-        System.out.println(new Bai19().getTrianglePascalAtN(1));
-    }
 }
