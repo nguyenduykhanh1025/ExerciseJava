@@ -7,19 +7,19 @@ public class Bai10 {
     public double findPi() {
         double pi = 3;
         int i = 2;
-        double valueAtFnI = findFn(i);
-        double valueNext = valueAtFnI;
-        double distance = 3 - valueNext;
+
+        double distance = 3;
+
         while (distance >= 0.00001) {
+
+            distance = findFn(i);
+
             if (i % 4 != 0) {
-                pi += valueNext;
+                pi += distance;
             } else {
-                pi -= valueNext;
+                pi -= distance;
             }
             i += 2;
-            valueAtFnI = findFn(i);
-            distance = valueNext - valueAtFnI;
-            valueNext = valueAtFnI;
         }
 
         return pi;
