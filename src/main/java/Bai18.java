@@ -1,17 +1,19 @@
 public class Bai18 {
 
-    public int convertDecimalToBinaryNumberReverse(int numberDecimal) {
-
+    public int convertDecimalToBinaryNumber(int numberDecimal) {
         int resultDecimalToBirary = 0, jumpValue = 0;
         while (numberDecimal != 0) {
             resultDecimalToBirary += Math.pow(10, jumpValue++) * (numberDecimal % 2);
             numberDecimal /= 2;
         }
+        return resultDecimalToBirary;
+    }
 
-        int result = 0;
-        jumpValue--;
+    public int convertDecimalToBinaryNumberReverse(int numberDecimal) {
+        int resultDecimalToBirary = convertDecimalToBinaryNumber(numberDecimal);
+        int result = 0, lenghtValue = (int) Math.log10(resultDecimalToBirary);
         while (resultDecimalToBirary != 0) {
-            result += Math.pow(10, jumpValue--) * (resultDecimalToBirary % 10);
+            result += Math.pow(10, lenghtValue--) * (resultDecimalToBirary % 10);
             resultDecimalToBirary /= 10;
         }
         return result;
