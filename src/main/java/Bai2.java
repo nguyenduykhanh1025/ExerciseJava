@@ -1,7 +1,6 @@
 public class Bai2 {
 
     public int findSumOfNumber(int number) {
-        int lengthNumber = (int) Math.log10(number) + 1;
         int sum = 0;
         while (number != 0){
             sum += number % 10;
