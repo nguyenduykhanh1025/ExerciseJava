@@ -1,12 +1,20 @@
 public class Bai18 {
 
     public int convertDecimalToBinaryNumberReverse(int numberDecimal) {
-        StringBuffer strResult = new StringBuffer("");
+
+        int resultDecimalToBirary = 0, jumpValue = 0;
         while (numberDecimal != 0) {
-            strResult.append(numberDecimal % 2);
+            resultDecimalToBirary += Math.pow(10, jumpValue++) * (numberDecimal % 2);
             numberDecimal /= 2;
         }
-        return Integer.parseInt(strResult.toString());
+
+        int result = 0;
+        jumpValue--;
+        while (resultDecimalToBirary != 0) {
+            result += Math.pow(10, jumpValue--) * (resultDecimalToBirary % 10);
+            resultDecimalToBirary /= 10;
+        }
+        return result;
     }
 
     public int covertBinaryToDecumalNumber(int numberBinary) {
