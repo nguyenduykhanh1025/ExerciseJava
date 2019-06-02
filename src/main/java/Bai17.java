@@ -7,9 +7,6 @@ public class Bai17 {
             sum += Math.pow(tempNumber % 10, lenghtOfNumber);
             tempNumber /= 10;
         }
-        if (sum == number) {
-            return true;
-        }
-        return false;
+        return sum == number ? true : false;
     }
 }
