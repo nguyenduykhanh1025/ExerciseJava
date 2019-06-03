@@ -1,5 +1,4 @@
 public class Bai2 {
-
     public int findSumOfNumber(int number) {
         int sum = 0;
         while (number != 0){
