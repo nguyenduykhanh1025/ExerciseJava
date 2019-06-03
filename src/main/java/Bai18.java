@@ -9,28 +9,13 @@ public class Bai18 {
         return resultDecimalToBirary;
     }
 
-    public int convertDecimalToBinaryNumberReverse(int numberDecimal) {
-        int resultDecimalToBirary = convertDecimalToBinaryNumber(numberDecimal);
-        int result = 0, lenghtValue = (int) Math.log10(resultDecimalToBirary);
-        while (resultDecimalToBirary != 0) {
-            result += Math.pow(10, lenghtValue--) * (resultDecimalToBirary % 10);
-            resultDecimalToBirary /= 10;
+    public int covertDecimalToDecimalreserve(int numberDecimal) {
+        int binaryNumber = convertDecimalToBinaryNumber(numberDecimal);
+        int lengthNumber = (int) Math.log10(binaryNumber), sumresult = 0;
+        while (lengthNumber >= 0) {
+            sumresult += (binaryNumber % 10 * Math.pow(2, lengthNumber--));
+            binaryNumber /= 10;
         }
-        return result;
+        return sumresult;
     }
-
-    public int covertBinaryToDecumalNumber(int numberBinary) {
-        int sum = 0;
-        int lenghtNumber = (int) Math.log10(numberBinary) + 1;
-        for (int i = 0; i < lenghtNumber; ++i) {
-            sum += (numberBinary % 2) * Math.pow(2, i);
-            numberBinary /= 10;
-        }
-        return sum;
-    }
-
-    public int getNumberReverseFromCovertBinary(int number) {
-        return covertBinaryToDecumalNumber(convertDecimalToBinaryNumberReverse(number));
-    }
-
 }
