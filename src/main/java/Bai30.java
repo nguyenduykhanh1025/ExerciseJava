@@ -1,54 +1,21 @@
+import java.util.HashMap;
+import java.util.Map;
 
 public class Bai30 {
 
     public String coverDecimalNumberToRomanNumber(int decimalNumber) {
+
+        int[] arrKeyDecimal = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] arrValueRoman = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
         StringBuffer result = new StringBuffer("");
         while (decimalNumber != 0) {
-            if (decimalNumber >= 1000) {
-                decimalNumber -= 1000;
-                result.append("M");
-            } else if (decimalNumber >= 900) {
-                decimalNumber -= 900;
-                result.append("C");
-                result.append("M");
-            } else if (decimalNumber >= 500) {
-                decimalNumber -= 500;
-                result.append("D");
-            } else if (decimalNumber >= 400) {
-                decimalNumber -= 400;
-                result.append("C");
-                result.append("D");
-            } else if (decimalNumber >= 100) {
-                decimalNumber -= 100;
-                result.append("C");
-            } else if (decimalNumber >= 90) {
-                decimalNumber -= 90;
-                result.append("X");
-                result.append("C");
-            } else if (decimalNumber >= 50) {
-                decimalNumber -= 50;
-                result.append("L");
-            } else if (decimalNumber >= 40) {
-                decimalNumber -= 40;
-                result.append("X");
-                result.append("L");
-            } else if (decimalNumber >= 10) {
-                decimalNumber -= 10;
-                result.append("X");
-            } else if (decimalNumber >= 9) {
-                decimalNumber -= 9;
-                result.append("I");
-                result.append("X");
-            } else if (decimalNumber >= 5) {
-                decimalNumber -= 5;
-                result.append("V");
-            } else if (decimalNumber >= 4) {
-                decimalNumber -= 4;
-                result.append("I");
-                result.append("V");
-            } else {
-                decimalNumber -= 1;
-                result.append("I");
+            for (int i = 0; i < arrKeyDecimal.length; ++i) {
+                if (decimalNumber >= arrKeyDecimal[i]) {
+                    result.append(arrValueRoman[i]);
+                    decimalNumber -= arrKeyDecimal[i];
+                    continue;
+                }
             }
         }
         return result.toString();
