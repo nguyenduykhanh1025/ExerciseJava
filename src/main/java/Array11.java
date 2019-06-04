@@ -13,7 +13,7 @@ public class Array11 {
                     indexEven = j - 1;
                     break;
                 }
-                if (arr[i] % 2 != 0 && arr[j] % 2 != 0 && j <= indexOdd) {
+                else if (arr[i] % 2 != 0 && arr[j] % 2 != 0 && j <= indexOdd) {
                     int temp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = temp;
