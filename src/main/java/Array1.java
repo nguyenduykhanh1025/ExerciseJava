@@ -3,9 +3,6 @@ public class Array1 {
 
         StringBuffer arrayNumberAppearTwice = new StringBuffer("");
         boolean[] arrCheck = new boolean[n];
-        for (int i = 0; i < n; ++i) {
-            arrCheck[i] = false;
-        }
 
         for (int i = 0; i < n - 1; ++i) {
             if (arrCheck[i] == true) {
@@ -19,7 +16,7 @@ public class Array1 {
                     arrCheck[j] = true;
                 }
             }
-            if (checkTwice == true) {
+            if (checkTwice) {
                 arrayNumberAppearTwice.append(arrayValue[i] + " ");
             }
         }
