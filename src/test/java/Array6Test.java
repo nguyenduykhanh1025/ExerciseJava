@@ -14,9 +14,9 @@ public class Array6Test {
 
     @Test
     public void test_sortArray(){
-        int[] arr = {7,10,8,5,0,14,2};
-        int n = 7;
-        int []arrResult = {7,0,2,8,10,5,14};
+        int[] arr = {7,10,1,8,5,0,14,2};
+        int n = 8;
+        int []arrResult = {7,0,2,8,10,5,1,14};
         assertArrayEquals(new Array6().sortArray(arr,n),arrResult);
     }
 }
