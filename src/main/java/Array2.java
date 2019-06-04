@@ -2,19 +2,17 @@ public class Array2 {
 
     public int sumOfThreeNumberMax(int[] arr, int n) {
 
-        int maxPrevious = Integer.MAX_VALUE;
-        int jump = 0, sum = 0;
-        while (jump++ != 3) {
-            int maxValue = 0;
-            for (int i = 0; i < n; ++i) {
-                if (arr[i] > maxValue && arr[i] < maxPrevious) {
-                    maxValue = arr[i];
+        int max = arr[0] + arr[1] + arr[2];
+        for (int i = 0; i < n - 2; ++i) {
+            int sumTemp = arr[i];
+            for (int j = i + 1; j < n - 1; ++j) {
+                sumTemp += (arr[j] + arr[j + 1]);
+                if (sumTemp > max) {
+                    max = sumTemp;
                 }
+                sumTemp = arr[i];
             }
-            sum += maxValue;
-            maxPrevious = maxValue;
         }
-
-        return sum;
+        return max;
     }
 }
