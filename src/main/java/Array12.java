@@ -20,7 +20,7 @@ public class Array12 {
         }
         int mid = (start + stop) / 2;
         if (value > arr[mid + 1]) {
-            return getInsertArrayAscending(arr, value, mid + 1, stop);
+            return getInsertArrayAscending(arr, value, mid, stop);
         } else if (value < arr[mid]) {
             return getInsertArrayAscending(arr, value, start, mid);
         } else {
