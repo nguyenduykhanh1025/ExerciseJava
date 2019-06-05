@@ -1,15 +1,18 @@
 public class Array10 {
 
-    public String splitN(int[] arr, int n) {
+    public int[][] splitN(int[] arr, int n) {
+
         int lenght = arr.length;
-        StringBuffer strResult = new StringBuffer("");
+        int[][] arrResult = new int[(int) Math.round(lenght * 1.0 / n)][n];
+        int x = 0, y = 0;
+
         for (int i = 1; i <= lenght; ++i) {
-            strResult.append(arr[i - 1] + " ");
+            arrResult[x][y++] = arr[i - 1];
             if (i % n == 0) {
-                System.out.println("day " + i);
-                strResult.append(" ");
+                x++;
+                y = 0;
             }
         }
-        return strResult.toString().trim();
+        return arrResult;
     }
 }
