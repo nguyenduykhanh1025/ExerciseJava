@@ -1,15 +1,16 @@
 public class Array8 {
 
     public int getMinusOfMaxWithMinNumber(int[] arr, int n) {
-        int result = Integer.MIN_VALUE;
-        for (int i = 0; i < n - 1; ++i) {
-            for (int j = i + 1; j < n; ++j) {
-                int delta = Math.abs(arr[j] - arr[i]);
-                if (delta > result) {
-                    result = delta;
-                }
+        int maxNumber = arr[0];
+        int minNumber = arr[0];
+        for (int i = 1; i < n; ++i) {
+            if (arr[i] > maxNumber) {
+                maxNumber = arr[i];
+            }
+            if (arr[i] < minNumber) {
+                minNumber = arr[i];
             }
         }
-        return result;
+        return maxNumber - minNumber;
     }
 }
