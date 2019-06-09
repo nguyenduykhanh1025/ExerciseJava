@@ -1,6 +1,6 @@
 public class Array17 {
 
-    public int[][] getMatrixSprial(int n){
+    public int[][] getMatrixSprial(int n) {
         int lenght = n * n, index = 1, row = n - 1, column = n - 1;
         int[][] arrResult = new int[n][n];
         int i = 0, j = 0;
@@ -33,13 +33,4 @@ public class Array17 {
         return arrResult;
     }
 
-    public static void main(String []as){
-        int [][] arr = new Array17().getMatrixSprial(5);
-        for(int i = 0; i< 5; ++i){
-            for(int j = 0; j< 5; ++j){
-                System.out.print(" " + arr[i][j]);
-            }
-            System.out.println(" ");
-        }
-    }
 }
