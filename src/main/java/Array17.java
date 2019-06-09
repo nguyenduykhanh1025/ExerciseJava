@@ -1,6 +1,6 @@
 public class Array17 {
 
-    public int[][] getMatrixSprial(int n) {
+    public int[][] getMatrixSprial(int n){
         int lenght = n * n, index = 1, row = n - 1, column = n - 1;
         int[][] arrResult = new int[n][n];
         int i = 0, j = 0;
@@ -17,9 +17,6 @@ public class Array17 {
             column--;
 
             for (int k = column; k >= j; k--) {
-                if (index >= lenght) {
-                    break;
-                }
                 arrResult[row][k] = index++;
             }
             row--;
@@ -32,5 +29,4 @@ public class Array17 {
         }
         return arrResult;
     }
-
 }
