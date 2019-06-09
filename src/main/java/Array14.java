@@ -8,9 +8,6 @@ public class Array14 {
         while (index < lenght) {
 
             for (int k = j; k <= column; k++) {
-                if (index > lenght) {
-                    break;
-                }
                 arrResult[index++] = arr[i][k];
             }
             i++;
@@ -37,4 +34,11 @@ public class Array14 {
         return arrResult;
     }
 
+    public static void main(String[] s) {
+        int[][] arr = {{1,2,3},{4,5,6},{7,8,9}};
+        int[] arrResult = new Array14().getArrayFromTwoDimensional(arr, 3, 3);
+        for (int i = 0; i < 9; ++i) {
+            System.out.println(arrResult[i]);
+        }
+    }
 }
