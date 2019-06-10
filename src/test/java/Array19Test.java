@@ -19,6 +19,15 @@ public class Array19Test {
 
     @Test
     public void test_sortMatrixFollowSpiral2() {
+        int[][] arr = { {1,2,3,4},{6,7,8,9} };
+        int[][] arrResult = { {1,2,3,4},{9,8,7,6} };
+        for (int i = 0; i < arr.length; ++i) {
+            assertArrayEquals(new Array19().sortMatrixFollowSpiral(arr)[i], arrResult[i]);
+        }
+    }
+
+    @Test
+    public void test_sortMatrixFollowSpiral3() {
         int[][] arr = { {1, 2},
                 {6, 7},
                 {11, 12}};
