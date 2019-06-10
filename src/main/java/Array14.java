@@ -2,33 +2,33 @@ public class Array14 {
 
     public int[] getArrayFromTwoDimensional(int[][] arr, int m, int n) {
 
-        int lenght = n * m, index = 0, row = n - 1, column = m - 1;
-        int[] arrResult = new int[lenght];
-        int i = 0, j = 0;
-        while (index < lenght) {
+        int length = n * m, index = 0;
+        int[] arrResult = new int[length];
+        int bottom = 0, right = 0, top = n - 1, left = m - 1;
+        while (index < length) {
 
-            for (int k = j; k <= column; k++) {
-                arrResult[index++] = arr[i][k];
+            for (int k = right; k <= left; k++) {
+                arrResult[index++] = arr[bottom][k];
             }
-            i++;
+            bottom++;
 
-            for (int k = i; k <= row; k++) {
-                arrResult[index++] = arr[k][column];
+            for (int k = bottom; k <= top; k++) {
+                arrResult[index++] = arr[k][left];
             }
-            column--;
+            left--;
 
-            for (int k = column; k >= j; k--) {
-                if (index >= lenght) {
+            for (int k = left; k >= right; k--) {
+                if (index >= length) {
                     break;
                 }
-                arrResult[index++] = arr[row][k];
+                arrResult[index++] = arr[top][k];
             }
-            row--;
+            top--;
 
-            for (int k = row; k >= i; k--) {
-                arrResult[index++] = arr[k][j];
+            for (int k = top; k >= bottom; k--) {
+                arrResult[index++] = arr[k][right];
             }
-            j++;
+            right++;
 
         }
         return arrResult;
