@@ -7,38 +7,32 @@ public class Array14 {
 
         int[] arrResult = new int[length];
 
-        int bottom = 0;
-        int right = 0;
-        int top = arr.length - 1;
-        int left = arr[0].length - 1;
+        int top = 0;
+        int left = 0;
+        int bottom = arr.length - 1;
+        int right = arr[0].length - 1;
 
         while (index < length) {
 
-            for (int k = right; k <= left; k++) {
-                arrResult[index++] = arr[bottom][k];
-            }
-            bottom++;
-
-            for (int k = bottom; k <= top; k++) {
-                arrResult[index++] = arr[k][left];
-            }
-            left--;
-
-            for (int k = left; k >= right; k--) {
-                if (index >= length) {
-                    break;
-                }
+            for (int k = left; k <= right; k++) {
                 arrResult[index++] = arr[top][k];
             }
-            top--;
+            top++;
 
-            for (int k = top; k >= bottom; k--) {
-                if (index >= length) {
-                    break;
-                }
+            for (int k = top; k <= bottom && left<=right; k++) {
                 arrResult[index++] = arr[k][right];
             }
-            right++;
+            right--;
+
+            for (int k = right; k >= left && top<=bottom; k--) {
+                arrResult[index++] = arr[bottom][k];
+            }
+            bottom--;
+
+            for (int k = bottom; k >= top && left<=right; k--) {
+                arrResult[index++] = arr[k][left];
+            }
+            left++;
 
         }
         return arrResult;
