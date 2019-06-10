@@ -3,9 +3,10 @@ public class Array23 {
     public int getMaxSumConsecutive(int[] arr) {
         int sumMax = 0;
         int sumTemp = 0;
-        for (int i = 0; i < arr.length; ++i) {
+        for (int i = 0; i <= arr.length; ++i) {
 
-            if (arr[i] < 0) {
+            if (i == arr.length || arr[i] < 0) {
+                System.out.println("adu " + sumTemp);
                 sumMax = sumTemp>sumMax ? sumTemp : sumMax;
                 sumTemp = 0;
             } else {
@@ -16,7 +17,7 @@ public class Array23 {
     }
 
     public static void main(String[] s) {
-        int[] arr = {0, 1, -2, 8, 9, 0, 1, -2, 1, 1, 3, 1, 1};
+        int[] arr = {0, 1, -2, 8, 9, 0, 1, -2, 1, 1, 3, 1, 1,8,9,-1,1};
         System.out.println(new Array23().getMaxSumConsecutive(arr));
     }
 }
