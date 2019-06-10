@@ -17,67 +17,64 @@ public class Array19 {
     }
 
     public int[][] getMatrixSpiral(int[][] arr) {
-        int row = arr.length;
-        int column = arr[0].length;
-        int length = row * column;
+        int length = arr.length * arr[0].length;
         int indexX = 0;
         int indexY = 0;
 
-        int[][] arrResult = new int[row][column];
+        int[][] arrResult = new int[arr.length][arr[0].length];
 
-        int bottom = 0;
-        int right = 0;
-        int top = row - 1;
-        int left = column - 1;
+        int top = 0;
+        int left = 0;
+        int bottom = arr.length - 1;
+        int right = arr[0].length - 1;
 
+        while (indexX < arr.length) {
 
-        while (indexX < row) {
-
-            for (int k = right; k <= left; k++) {
-                arrResult[bottom][k] = arr[indexX][indexY++];
-                if (indexY == column) {
-                    indexX++;
-                    indexY = 0;
-                }
-            }
-            bottom++;
-
-            for (int k = bottom; k <= top; k++) {
-                arrResult[k][left] = arr[indexX][indexY++];
-                if (indexY == column) {
-                    indexX++;
-                    indexY = 0;
-                }
-            }
-            left--;
-
-            for (int k = left; k >= right; k--) {
-                if (indexX >= row) {
-                    break;
-                }
+            for (int k = left; k <= right; k++) {
                 arrResult[top][k] = arr[indexX][indexY++];
-                if (indexY == column) {
+                if(indexY == arr[0].length){
                     indexX++;
                     indexY = 0;
                 }
             }
-            top--;
-            for (int k = top; k >= bottom; k--) {
-                if (indexX >= row) {
-                    break;
-                }
+            top++;
+
+            for (int k = top; k <= bottom; k++) {
                 arrResult[k][right] = arr[indexX][indexY++];
-                if (indexY == column) {
+                if(indexY == arr[0].length){
                     indexX++;
                     indexY = 0;
                 }
             }
-            right++;
+            right--;
+
+            for (int k = right; k >= left && top<=bottom; k--) {
+                arrResult[bottom][k] = arr[indexX][indexY++];
+                if(indexY == arr[0].length){
+                    indexX++;
+                    indexY = 0;
+                }
+            }
+            bottom--;
+
+            for (int k = bottom; k >= top && left<=right; k--) {
+                arrResult[k][left] = arr[indexX][indexY++];
+                if(indexY == arr[0].length){
+                    indexX++;
+                    indexY = 0;
+                }
+            }
+            left++;
+
         }
         return arrResult;
     }
 
     public int[][] sortMatrixFollowSpiral(int arr[][]) {
         return getMatrixSpiral(sortMatrix(arr));
+    }
+
+    public static void main(String []s){
+
     }
 }
