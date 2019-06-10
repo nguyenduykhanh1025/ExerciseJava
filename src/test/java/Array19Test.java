@@ -28,10 +28,20 @@ public class Array19Test {
 
     @Test
     public void test_sortMatrixFollowSpiral3() {
-        int[][] arr = { {1, 2},
-                {6, 7},
-                {11, 12}};
-        int[][] arrResult = {   {1,2},{12,6},{11,7}   };
+        int[][] arr = {
+                {1},
+                {6},
+                {6},
+                {6},
+                {6},
+                {11}};
+        int[][] arrResult = {
+                {1},
+                {6},
+                {6},
+                {6},
+                {6},
+                {11}};
         for (int i = 0; i < arr.length; ++i) {
             assertArrayEquals(new Array19().sortMatrixFollowSpiral(arr)[i], arrResult[i]);
         }
