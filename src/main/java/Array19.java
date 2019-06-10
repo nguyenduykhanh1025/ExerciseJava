@@ -32,7 +32,7 @@ public class Array19 {
 
             for (int k = left; k <= right; k++) {
                 arrResult[top][k] = arr[indexX][indexY++];
-                if(indexY == arr[0].length){
+                if (indexY == arr[0].length) {
                     indexX++;
                     indexY = 0;
                 }
@@ -41,25 +41,25 @@ public class Array19 {
 
             for (int k = top; k <= bottom; k++) {
                 arrResult[k][right] = arr[indexX][indexY++];
-                if(indexY == arr[0].length){
+                if (indexY == arr[0].length) {
                     indexX++;
                     indexY = 0;
                 }
             }
             right--;
 
-            for (int k = right; k >= left && top<=bottom; k--) {
+            for (int k = right; k >= left && top <= bottom; k--) {
                 arrResult[bottom][k] = arr[indexX][indexY++];
-                if(indexY == arr[0].length){
+                if (indexY == arr[0].length) {
                     indexX++;
                     indexY = 0;
                 }
             }
             bottom--;
 
-            for (int k = bottom; k >= top && left<=right; k--) {
+            for (int k = bottom; k >= top && left <= right; k--) {
                 arrResult[k][left] = arr[indexX][indexY++];
-                if(indexY == arr[0].length){
+                if (indexY == arr[0].length) {
                     indexX++;
                     indexY = 0;
                 }
@@ -74,14 +74,4 @@ public class Array19 {
         return getMatrixSpiral(sortMatrix(arr));
     }
 
-    public static void main(String []s){
-        int[][] arr = { {1,2,3,4},{6,7,8,9} };
-        arr = new Array19().sortMatrixFollowSpiral(arr);
-        for(int i = 0; i< 2; ++i){
-            for(int j = 0; j< 4;++j){
-                System.out.print(arr[i][j] + " ");
-            }
-            System.out.println(" ");
-        }
-    }
 }
