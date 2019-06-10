@@ -15,17 +15,11 @@ public class Array14 {
         while (index < length) {
 
             for (int k = right; k <= left; k++) {
-                if (index >= length) {
-                    break;
-                }
                 arrResult[index++] = arr[bottom][k];
             }
             bottom++;
 
             for (int k = bottom; k <= top; k++) {
-                if (index >= length) {
-                    break;
-                }
                 arrResult[index++] = arr[k][left];
             }
             left--;
