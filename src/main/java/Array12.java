@@ -12,14 +12,12 @@ public class Array12 {
     }
 
     public int[] getInsertArrayAscending(int[] arr, int value) {
-        int lenght = arr.length;
+        int lenght = arr.length, i = 0;
         int[] arrResult = new int[lenght + 1];
-        for (int i = 0; i < lenght; ++i) {
-            if (arr[i] > value) {
-                arrResult = getInsert(arr, i, value);
-                break;
-            }
-        }
+        while (arr[i] < value)
+            i++;
+        arrResult = getInsert(arr, i, value);
         return arrResult;
     }
 }
+
