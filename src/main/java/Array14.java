@@ -19,7 +19,7 @@ public class Array14 {
             }
             top++;
 
-            for (int k = top; k <= bottom && left<=right; k++) {
+            for (int k = top; k <= bottom; k++) {
                 arrResult[index++] = arr[k][right];
             }
             right--;
