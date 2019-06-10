@@ -54,4 +54,15 @@ public class Array19Test {
             assertArrayEquals(new Array19().getMatrixSpiral(arr)[i], arrResult[i]);
         }
     }
+
+    @Test
+    public void test_getMatrixSpiral2() {
+        int[][] arr = { {1, 2},
+                {6, 7},
+                {11, 12}};
+        int[][] arrResult = {{1,2},{12,6},{11,7}};
+        for (int i = 0; i < arr.length; ++i) {
+            assertArrayEquals(new Array19().getMatrixSpiral(arr)[i], arrResult[i]);
+        }
+    }
 }
