@@ -40,8 +40,8 @@ public class Array14Test {
 
     @Test
     public void test_getArrayFromTwoDimensional22(){
-        int[][] arr = { {1,2,3,4} };
-        int[] arrResult = {1,2,3,4};
+        int[][] arr = { {1,2,3,4},{6,7,8,9} };
+        int[] arrResult = {1,2,3,4,9,8,7,6};
         assertArrayEquals(new Array14().getArrayFromTwoDimensional(arr),arrResult);
     }
 }
