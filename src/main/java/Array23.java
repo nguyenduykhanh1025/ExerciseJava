@@ -15,9 +15,4 @@ public class Array23 {
         }
         return sumMax;
     }
-
-    public static void main(String[] s) {
-        int[] arr = {0, 1, -2, 8, 9, 0, 1, -2, 1, 1, 3, 1, 1,8,9,-1,1};
-        System.out.println(new Array23().getMaxSumConsecutive(arr));
-    }
 }
