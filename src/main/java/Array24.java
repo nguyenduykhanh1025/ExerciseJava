@@ -16,15 +16,11 @@ public class Array24 {
         return (a * b) / findUCLN(a, b);
     }
 
-    public int getBCNNArray(int []arr){
-        int result = findBCNN(arr[0],arr[1]);
-        for(int i = 2; i< arr.length;++i){
-            result = findBCNN(result,arr[i]);
+    public int getBCNNArray(int[] arr) {
+        int result = findBCNN(arr[0], arr[1]);
+        for (int i = 2; i < arr.length; ++i) {
+            result = findBCNN(result, arr[i]);
         }
         return result;
-    }
-    public static void main(String []s){
-        int []arr = {0,24,18};
-        System.out.println(new Array24().getBCNNArray(arr));
     }
 }
