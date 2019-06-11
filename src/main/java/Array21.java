@@ -1,30 +1,42 @@
 public class Array21 {
 
-    public double getDeterminantMatrix(int[][] arr) {
-        int n = arr.length;
-        int[][] U = new int[n][n];
-        int[][] L = new int[n][n];
+    public double getDeterminantMatrix(float[][] arr) {
+        int row = arr.length;
+        int column = arr[0].length;
+        for(int index = 0; index < row - 1; ++index){
+            for(int i = 1 + index; i< row; ++i){
+                float temp = arr[i][index] / arr[index][index];
 
-        for (int i = 0; i < n; ++i) {
-            U[i][i] = arr[i][i];
-            L[i][i] = 1;
-            for (int k = i + 1; k < n; ++k) {
-                L[k][i] = arr[k][i] / U[i][i];
-                U[i][k] = arr[i][k];
-                U[k][i] = 0;
-                L[i][k] = 0;
-            }
-            for (int k = i + 1; k < n; ++k) {
-                for (int j = i + 1; j < n; ++j) {
-                    arr[k][j] = arr[k][j] - L[k][i] * U[i][j];
+                for(int j = index; j< column; ++j){
+                    arr[i][j] = arr[i][j] - temp*arr[index][j];
                 }
             }
         }
 
-        double result = 1;
-        for (int i = 0; i < n; ++i) {
+        float result = 1;
+        for(int i = 0; i< row; ++i){
+            for(int j = 0; j< column; ++j){
+                System.out.print(arr[i][j] + "  ");
+            }
+            System.out.println("");
+        }
+        for(int i = 0; i< row; ++i){
             result *= arr[i][i];
         }
         return result;
     }
+
+    public static void main(String []s){
+        float[][] arr = {
+                {4, 11, 28, 3, 9, 1},
+                {2, 2, 4, 28, 2, 14},
+                {6, 3, 9, 17, 18, 7},
+                {3, 3, 1, 16, 6, 15},
+                {6, 5, 3, 2, 9, 23},
+                {1, 6, 11, 2, 19, 16}
+        };
+
+        System.out.println(new Array21().getDeterminantMatrix(arr));
+    }
+
 }
