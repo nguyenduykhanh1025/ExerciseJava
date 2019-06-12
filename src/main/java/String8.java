@@ -3,6 +3,10 @@ public class String8 {
 
     public String getStringStandard(String str) {
 
+        str = str.replace(".", ". ");
+        str = str.replace(",", ", ");
+        str = str.replace("!", "! ");
+        str = str.replace("?", "? ");
 
         while (str.replace("  ", " ") != str) {
             str = str.replace("  ", " ");
