@@ -14,13 +14,14 @@ public class String8 {
             strResult.setCharAt(0, (char) (strResult.charAt(0) - 32));
         }
 
+        StringBuffer strTemp = new StringBuffer(strResult);
         for (int i = 1; i < strResult.length(); ++i) {
             if (strResult.charAt(i) == '.' || strResult.charAt(i) == '?' || strResult.charAt(i) == '!') {
 
                 if (strResult.charAt(i - 1) == ' ') {
                     strResult.delete(i - 1, i);
+                    i--;
                 }
-
                 if (strResult.charAt(i += 2) > 96) {
                     strResult.setCharAt(i, (char) (strResult.charAt(i) - 32));
                 }
