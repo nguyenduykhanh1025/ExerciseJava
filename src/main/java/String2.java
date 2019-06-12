@@ -7,12 +7,15 @@ public class String2 {
         for(int i = 0; i< str.length(); ++i){
             char dataTemp = str.charAt(i);
             if ((dataTemp >= 97 && dataTemp <= 122)) {
+                System.out.println("co");
                 listResult.add(String.valueOf(dataTemp));
             }
             else if(dataTemp >= 48 && dataTemp <= 57){
+                System.out.println("khong");
                 listResult.add(String.valueOf(dataTemp));
             }
         }
         return listResult;
     }
+
 }
