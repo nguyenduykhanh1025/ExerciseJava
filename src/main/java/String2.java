@@ -10,7 +10,7 @@ public class String2 {
                 System.out.println("co");
                 listResult.add(String.valueOf(dataTemp));
             }
-            else if(dataTemp >= 48 && dataTemp <= 57){
+            if(dataTemp >= 48 && dataTemp <= 57){
                 System.out.println("khong");
                 listResult.add(String.valueOf(dataTemp));
             }
