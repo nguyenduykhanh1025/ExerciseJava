@@ -5,8 +5,8 @@ import static org.junit.Assert.assertEquals;
 public class String10Test {
     @Test
     public void test_getRevivalString(){
-        String s = "abc4e6fd";
-        assertEquals(new String10().getRevivalString(s),"abcccceeeeeefd");
+        String s = "abc2e6fd9";
+        assertEquals(new String10().getRevivalString(s),"abcceeeeeefddddddddd");
     }
 
     @Test
@@ -14,5 +14,14 @@ public class String10Test {
         String str = "abcccceeeefddd";
         String result = "abc4e4fd3";
         assertEquals(new String10().shortcutString(str),result);
+    }
+
+    @Test
+    public void test_isNaN(){
+        char i = '5';
+        assertEquals(new String10().isNaN(i),true);
+
+        char i1 = 's';
+        assertEquals(new String10().isNaN(i1),false);
     }
 }
