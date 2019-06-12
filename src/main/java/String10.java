@@ -29,10 +29,17 @@ public class String10 {
 
         for (int i = 0; i < strShortcut.length(); ++i) {
 
-            if (strShortcut.charAt(i) >= 50 && strShortcut.charAt(i) <= 57) {
-                for (int j = 0; j < Integer.parseInt(String.valueOf(strShortcut.charAt(i))) - 1; ++j) {
+            if (strShortcut.charAt(i) >= 49 && strShortcut.charAt(i) <= 57) {
+                int k = i;
+                StringBuffer jump = new StringBuffer("");
+                while (k < strShortcut.length() && (strShortcut.charAt(k) >= 49 && strShortcut.charAt(k) <= 57)) {
+                    jump.append(strShortcut.charAt(k));
+                    k++;
+                }
+                for (int j = 0; j < Integer.parseInt(jump.toString()) - 1; ++j) {
                     strResult.append(strShortcut.charAt(i - 1));
                 }
+                i = k - 1;
             } else {
                 strResult.append(strShortcut.charAt(i));
             }

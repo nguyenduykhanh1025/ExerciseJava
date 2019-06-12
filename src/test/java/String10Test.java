@@ -5,8 +5,8 @@ import static org.junit.Assert.assertEquals;
 public class String10Test {
     @Test
     public void test_getRevivalString(){
-        String s = "abc2e6fd91";
-        assertEquals(new String10().getRevivalString(s),"abcceeeeeefddddddddd1");
+        String s = "abc2e6fd9g13+";
+        assertEquals(new String10().getRevivalString(s),"abcceeeeeefdddddddddggggggggggggg+");
     }
 
     @Test
