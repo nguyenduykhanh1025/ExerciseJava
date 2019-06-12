@@ -24,7 +24,7 @@ public class String10 {
     }
 
     public boolean isNaN(char i){
-        if (i >= 49 && i <= 57){
+        if (i >= 50 && i <= 57){
             return true;
         }
         return false;
