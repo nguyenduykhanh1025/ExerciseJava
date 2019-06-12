@@ -6,7 +6,10 @@ public class String2 {
         ArrayList<String> listResult = new ArrayList<>();
         for(int i = 0; i< str.length(); ++i){
             char dataTemp = str.charAt(i);
-            if ((dataTemp >= 97 && dataTemp <= 122) || ((dataTemp >= 48 && dataTemp <= 57))) {
+            if ((dataTemp >= 97 && dataTemp <= 122)) {
+                listResult.add(String.valueOf(dataTemp));
+            }
+            else if(dataTemp >= 48 && dataTemp <= 57){
                 listResult.add(String.valueOf(dataTemp));
             }
         }
