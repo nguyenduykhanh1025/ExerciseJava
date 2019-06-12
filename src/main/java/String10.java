@@ -23,20 +23,13 @@ public class String10 {
         return strResult.toString();
     }
 
-    public boolean isNaN(char i){
-        if (i >= 50 && i <= 57){
-            return true;
-        }
-        return false;
-    }
-
 
     public String getRevivalString(String strShortcut) {
         StringBuffer strResult = new StringBuffer("");
 
         for (int i = 0; i < strShortcut.length(); ++i) {
 
-            if (isNaN(strShortcut.charAt(i))) {
+            if (strShortcut.charAt(i) >= 50 && strShortcut.charAt(i) <= 57) {
                 for (int j = 0; j < Integer.parseInt(String.valueOf(strShortcut.charAt(i))) - 1; ++j) {
                     strResult.append(strShortcut.charAt(i - 1));
                 }
