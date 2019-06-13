@@ -27,8 +27,4 @@ public class String15 {
         }
         return -1;
     }
-
-    public static void main(String[] s) {
-        System.out.println(new String15().getVerifyNumber("8938505974194"));
-    }
 }
