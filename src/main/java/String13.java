@@ -22,10 +22,4 @@ public class String13 {
         return true;
     }
 
-    public static void main(String[] s) {
-        String a = "abcd";
-        String b = "dbcd";
-        System.out.println(new String13().isSameString(a, b));
-    }
-
 }
