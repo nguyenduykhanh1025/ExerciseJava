@@ -5,9 +5,7 @@ public class Array12 {
         int[] arrTemp = new int[length + 1];
 
         System.arraycopy(arr, 0, arrTemp, 0, length);
-        for (int i = length; i > insertTo; --i) {
-            arrTemp[i] = arr[i - 1];
-        }
+        System.arraycopy(arr, insertTo, arrTemp, insertTo + 1, length - insertTo);
         arrTemp[insertTo] = value;
         return arrTemp;
     }
