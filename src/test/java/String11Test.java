@@ -4,6 +4,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class String11Test {
+
     @Test
     public void test_isNumber(){
         assertEquals(new String11().isNumber('0'),true);
