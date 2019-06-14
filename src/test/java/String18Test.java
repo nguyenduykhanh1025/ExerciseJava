@@ -26,6 +26,14 @@ public class String18Test {
         String result = "3025";
         assertEquals(new String18().getMultiplication(a,b),result);
     }
+
+    @Test
+    public void test_getMultiplication3(){
+        String a = "1";
+        String b = "2";
+        String result = "2";
+        assertEquals(new String18().getMultiplication(a,b),result);
+    }
     @Test
     public void test_getSum(){
         String a = "12444";
