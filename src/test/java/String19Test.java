@@ -33,6 +33,13 @@ public class String19Test {
     }
 
     @Test
+    public void test_getDivision14() {
+        String a = "12";
+        String b = "5";
+        assertEquals(new String19().getDivision(a, b), 2);
+    }
+
+    @Test
     public void test_addZero() {
         String s = "12";
         assertEquals(new String19().addZero(s, 2), "0012");
