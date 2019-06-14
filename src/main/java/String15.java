@@ -6,18 +6,14 @@ public class String15 {
 
         int i = 0;
         for (i = 0; i < strData.length(); ++i) {
-            if (i % 2 == 0) {
-                sum += Integer.parseInt(String.valueOf(strData.charAt(i)));
-            } else {
-                sum += 3 * Integer.parseInt(String.valueOf(strData.charAt(i)));
-            }
+            sum += (1 + 2* (i & 1))* (strData.charAt(i) - '0');
         }
 
 
         for (int j = 0; j <= 9; ++j) {
             if (i % 2 == 0) {
                 if ((sum + j) % 10 == 0) {
-                    return j;
+                    return j++;
                 }
             } else {
                 if ((sum + j / 3) % 10 == 0) {
