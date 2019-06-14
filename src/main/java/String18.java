@@ -80,5 +80,4 @@ public class String18 {
         }
         return Integer.parseInt(result);
     }
-
 }
