@@ -1,6 +1,5 @@
 import org.junit.Test;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class String18Test {
@@ -8,7 +7,7 @@ public class String18Test {
     public void test_getMultiplication(){
         String a = "55";
         String b = "535";
-        int result = 29425;
+        String result = "29425";
         assertEquals(new String18().getMultiplication(a,b),result);
     }
 
@@ -16,7 +15,7 @@ public class String18Test {
     public void test_getMultiplication1(){
         String a = "535";
         String b = "55";
-        int result = 29425;
+        String result = "29425";
         assertEquals(new String18().getMultiplication(a,b),result);
     }
 

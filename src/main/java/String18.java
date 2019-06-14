@@ -11,7 +11,6 @@ public class String18 {
 
     public int getSum(String a, String b) {
 
-
         if (a.length() > b.length()) {
             String temp = a;
             a = b;
@@ -30,18 +29,18 @@ public class String18 {
 
         for (indexA = a.length() - 1; indexA >= 0; --indexA) {
 
-            numberA = a.charAt(indexA) - 48;
-            numberB = b.charAt(indexB) - 48;
+            numberA = a.charAt(indexA) - '0';
+            numberB = b.charAt(indexB) - '0';
 
             sum = numberA + numberB + surplus;
 
-            surplus = sum >= 10 ? 1 : 0;
+            surplus = sum / 10;
 
             strResult.append(sum % 10);
             indexB--;
         }
 
-        numberB = indexB >= 0 ? b.charAt(indexB--) - 48 : 0;
+        numberB = indexB >= 0 ? b.charAt(indexB--) - '0' : 0;
         sum = surplus == 1 ? numberB + 1 : numberB;
         strResult.append(sum % 10);
 
@@ -52,19 +51,19 @@ public class String18 {
         return Integer.parseInt(strResult.reverse().toString());
     }
 
-    public int getMultiplication(String a, String b) {
+    public String getMultiplication(String a, String b) {
 
         String result = "0";
         for (int i = b.length() - 1; i >= 0; --i) {
 
-            int numberB = b.charAt(i) - 48;
+            int numberB = b.charAt(i) - '0';
             int numberA = 0;
             int surplus = 0;
 
             StringBuffer strResultTemp = new StringBuffer("");
 
             for (int j = a.length() - 1; j >= 0; --j) {
-                numberA = a.charAt(j) - 48;
+                numberA = a.charAt(j) - '0';
 
                 strResultTemp.append((numberB * numberA) % 10 + surplus);
                 surplus = (numberA * numberB) / 10;
@@ -78,6 +77,6 @@ public class String18 {
             temp = addZero(temp, b.length() - i - 1);
             result = String.valueOf(getSum(temp, result));
         }
-        return Integer.parseInt(result);
+        return result;
     }
 }
