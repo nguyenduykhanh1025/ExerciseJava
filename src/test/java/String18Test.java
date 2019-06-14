@@ -20,6 +20,13 @@ public class String18Test {
     }
 
     @Test
+    public void test_getMultiplication2(){
+        String a = "55";
+        String b = "55";
+        String result = "3025";
+        assertEquals(new String18().getMultiplication(a,b),result);
+    }
+    @Test
     public void test_getSum(){
         String a = "12444";
         String b = "948";
