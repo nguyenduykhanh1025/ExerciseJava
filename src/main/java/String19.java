@@ -63,8 +63,15 @@ public class String19 {
             return 0;
         }
 
+        StringBuilder bBuilder = new StringBuilder(b);
+        while (bBuilder.length() < a.length()) {
+            bBuilder.insert(0, "0");
+        }
+
+        b = bBuilder.toString();
         int result = 0;
-        while (!getSubtraction(a, b).equals("0") && !getSubtraction(a, b).contains("-")) {
+
+        while (a.compareTo(b) >= 0) {
             a = getSubtraction(a, b);
             result++;
         }
