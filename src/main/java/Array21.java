@@ -1,4 +1,3 @@
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 public class Array21 {
 
@@ -6,25 +5,21 @@ public class Array21 {
         int row = arr.length;
         int column = arr[0].length;
         int[][] arrResult = new int[row - 1][column - 1];
-        int[][] arrTemp = new int[arr.length][arr[0].length];
-
-        for (int i = 0; i < arr.length; ++i) {
-            for (int j = 0; j < arr[0].length; ++j) {
-                arrTemp[i][j] = arr[i][j];
-            }
-        }
-
-        for (int i = indexRowDelete; i < row - 1; ++i) {
-            arrTemp[i] = arrTemp[i + 1];
-        }
-        for (int i = indexColumnDelete; i < column - 1; ++i) {
-            for (int j = 0; j < row - 1; ++j) {
-                arrTemp[j][i] = arrTemp[j][i + 1];
-            }
-        }
-        for (int i = 0; i < row - 1; ++i) {
-            for (int j = 0; j < column - 1; ++j) {
-                arrResult[i][j] = arrTemp[i][j];
+        int indexX = 0;
+        int indexY = 0;
+        for (int i = 0; i < row; ++i) {
+            for (int j = 0; j < column; ++j) {
+                if (i == indexRowDelete) {
+                    continue;
+                } else if (j == indexColumnDelete) {
+                    continue;
+                } else {
+                    arrResult[indexY][indexX++] = arr[i][j];
+                    if (indexX > column - 2) {
+                        indexX = 0;
+                        indexY++;
+                    }
+                }
             }
         }
 
@@ -47,5 +42,4 @@ public class Array21 {
         }
         return sum;
     }
-
 }

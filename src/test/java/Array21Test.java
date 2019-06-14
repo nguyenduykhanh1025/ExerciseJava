@@ -4,6 +4,24 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class Array21Test {
+
+    @Test
+    public void test_getSubMatrix() {
+        int[][] arr = {
+                {1, 9, 3, 4},
+                {5, 6, 7, 9},
+                {3, 10, 11, 12},
+                {13, 2, 5, 3}
+        };
+
+        int[][] arrResult = {
+                {6, 7, 9},
+                {10, 11, 12},
+                {2, 5, 3}
+        };
+        assertArrayEquals(new Array21().getSubMatrix(arr, 0, 0), arrResult);
+    }
+
     @Test
     public void test_getDeterminantMatrix2() {
         int[][] arr = {
