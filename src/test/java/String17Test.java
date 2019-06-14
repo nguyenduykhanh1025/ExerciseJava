@@ -15,7 +15,7 @@ public class String17Test {
     public void test_getSubtraction(){
         String a = "45";
         String b = "55";
-        int result = -10;
+        String result = "-10";
         assertEquals(new String17().getSubtraction(a,b),result);
     }
 
@@ -23,7 +23,7 @@ public class String17Test {
     public void test_getSubtraction2(){
         String a = "55";
         String b = "45";
-        int result = 10;
+        String result = "10";
         assertEquals(new String17().getSubtraction(a,b),result);
     }
 
@@ -31,7 +31,7 @@ public class String17Test {
     public void test_getSubtraction3(){
         String a = "55";
         String b = "1229";
-        int result = -1174;
+        String result = "-1174";
         assertEquals(new String17().getSubtraction(a,b),result);
     }
 
@@ -39,7 +39,7 @@ public class String17Test {
     public void test_getSubtraction4(){
         String a = "1229";
         String b = "55";
-        int result = 1174;
+        String result = "1174";
         assertEquals(new String17().getSubtraction(a,b),result);
     }
 

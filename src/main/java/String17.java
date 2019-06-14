@@ -3,22 +3,22 @@ public class String17 {
     public String addZero(String a, int countZero) {
         StringBuffer strATemp = new StringBuffer(a);
         for (int i = 0; i < countZero; ++i) {
-            a = strATemp.reverse().append("0").reverse().toString();
+            a = strATemp.insert(0,'0').toString();
             strATemp = new StringBuffer(a);
         }
         return a;
     }
 
 
-    public int getSubtraction(String a, String b) {
+    public String getSubtraction(String a, String b) {
 
         int instance = a.length() - b.length();
         boolean checkSign = true;
         if (instance < 0) {
-            a = addZero(a, Math.abs(instance));
+            a = addZero(a, -instance);
         }
         if (instance > 0) {
-            b = addZero(b, Math.abs(instance));
+            b = addZero(b, instance);
         }
 
         if (a.compareTo(b) < 0) {
@@ -28,7 +28,7 @@ public class String17 {
             checkSign = false;
         }
 
-        StringBuffer strResult = new StringBuffer("");
+        StringBuffer strResult = new StringBuffer();
 
         int indexA = a.length() - 1;
         int indexB;
@@ -40,12 +40,14 @@ public class String17 {
         int subtract = 0;
 
         for (indexB = b.length() - 1; indexB >= 0; --indexB) {
-            numberA = a.charAt(indexA) - 48;
-            numberB = b.charAt(indexB) - 48;
+            numberA = a.charAt(indexA) - '0';
+            numberB = b.charAt(indexB) - '0';
 
-
-            subtract = numberA - numberB - surplus >= 0 ? numberA - numberB - surplus : 10 + numberA - numberB - surplus;
-
+            if( numberA - numberB - surplus >= 0){
+                subtract = numberA - numberB - surplus;
+            }else{
+                subtract = 10 + numberA - numberB - surplus;
+            }
             surplus = numberA - numberB - surplus >= 0 ? 0 : 1;
 
             strResult.append(Math.abs(subtract));
@@ -53,7 +55,6 @@ public class String17 {
 
         }
 
-        int numberResult = Integer.parseInt(String.valueOf(strResult.reverse()));
-        return checkSign == false ? -numberResult : numberResult;
+        return !checkSign ? strResult.reverse().insert(0,'-').toString() : strResult.reverse().toString();
     }
 }
