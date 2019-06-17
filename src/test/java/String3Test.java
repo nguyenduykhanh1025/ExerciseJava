@@ -1,17 +1,17 @@
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class String3Test {
     @Test
     public void test_isStringSymmetric(){
         String s = "aba";
-        assertEquals(new String3().isStringSymmetric(s),true);
+        assertTrue(new String3().isStringSymmetric(s));
     }
 
     @Test
     public void test_isStringSymmetric2(){
         String s = "abac";
-        assertEquals(new String3().isStringSymmetric(s),false);
+        assertFalse(new String3().isStringSymmetric(s));
     }
 }
