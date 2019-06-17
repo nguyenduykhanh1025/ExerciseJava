@@ -1,9 +1,11 @@
 public class String3 {
 
     public boolean isStringSymmetric(String s) {
-        if (s.substring(0, s.length() / 2).equals(new StringBuffer(s.substring(s.length() - (s.length() / 2))).reverse().toString())) {
-            return true;
+        for(int i = 0; i< s.length()/2; ++i){
+            if(s.charAt(i) != s.charAt(s.length() - 1 - i)){
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 }
