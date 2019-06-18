@@ -33,24 +33,20 @@ public class String19 {
         int indexA = a.length() - 1;
         int indexB;
 
-        int numberB;
-        int numberA;
-
         int surplus = 0;
         int subtract;
 
         for (indexB = b.length() - 1; indexB >= 0; --indexB) {
 
-            numberA = a.charAt(indexA) - '0';
-            numberB = b.charAt(indexB) - '0';
+            int subtractTemp = (a.charAt(indexA) - '0') - (b.charAt(indexB) - '0') - surplus;
 
-            if (numberA - numberB - surplus >= 0) {
-                subtract = numberA - numberB - surplus;
+            if (subtractTemp >= 0) {
+                subtract = subtractTemp;
             } else {
-                subtract = 10 + numberA - numberB - surplus;
+                subtract = 10 + subtractTemp;
             }
 
-            surplus = numberA - numberB - surplus >= 0 ? 0 : 1;
+            surplus = subtractTemp >= 0 ? 0 : 1;
 
             strResult.insert(0, Math.abs(subtract));
             indexA--;
