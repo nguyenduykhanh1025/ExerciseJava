@@ -1,18 +1,19 @@
 public class String19 {
 
-    public String addZero(String a, int countZero) {
-        StringBuffer strATemp = new StringBuffer(a);
-        for (int i = 0; i < countZero; ++i) {
-            a = strATemp.insert(0, '0').toString();
-            strATemp = new StringBuffer(a);
+    public String addZero(String origin, int countZero) {
+        StringBuilder strATemp = new StringBuilder(origin);
+
+        for (int i = 0; i < countZero; i++) {
+            strATemp.insert(0,'0');
         }
-        return a;
+
+        return strATemp.toString();
     }
+
 
     public String getSubtraction(String a, String b) {
 
         int instance = a.length() - b.length();
-        boolean checkSign = true;
 
         if (instance < 0) {
             a = addZero(a, -instance);
@@ -20,40 +21,40 @@ public class String19 {
             b = addZero(b, instance);
         }
 
+        boolean negative = false;
+
         if (a.compareTo(b) < 0) {
             String temp = a;
             a = b;
             b = temp;
-            checkSign = false;
+            negative = true;
         }
 
         StringBuilder strResult = new StringBuilder();
 
-        int indexA = a.length() - 1;
-        int indexB;
-
         int surplus = 0;
-        int subtract;
 
-        for (indexB = b.length() - 1; indexB >= 0; --indexB) {
+        for (int i = b.length() - 1; i >= 0; i--) {
 
-            int subtractTemp = (a.charAt(indexA) - '0') - (b.charAt(indexB) - '0') - surplus;
+            int subtract = a.charAt(i) - b.charAt(i) - surplus;
 
-            if (subtractTemp >= 0) {
-                subtract = subtractTemp;
-            } else {
-                subtract = 10 + subtractTemp;
+            surplus= 0;
+
+            if (subtract < 0) {
+                subtract += 10;
+                surplus = 1;
             }
 
-            surplus = subtractTemp >= 0 ? 0 : 1;
-
             strResult.insert(0, subtract);
-            indexA--;
-
         }
 
-        return !checkSign ? strResult.insert(0,"-").toString() : strResult.toString();
+        if(negative){
+            strResult.insert(0, '-');
+        }
+
+        return strResult.toString();
     }
+
 
     public int getDivision(String a, String b) {
 
