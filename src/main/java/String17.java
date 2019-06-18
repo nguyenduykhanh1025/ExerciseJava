@@ -14,10 +14,10 @@ public class String17 {
 
         int instance = a.length() - b.length();
         boolean checkSign = true;
+
         if (instance < 0) {
             a = addZero(a, -instance);
-        }
-        if (instance > 0) {
+        }else {
             b = addZero(b, instance);
         }
 
@@ -28,18 +28,20 @@ public class String17 {
             checkSign = false;
         }
 
-        StringBuffer strResult = new StringBuffer();
+        StringBuilder strResult = new StringBuilder();
 
         int indexA = a.length() - 1;
         int indexB;
 
 
-        int numberB = 0;
-        int numberA = 0;
+        int numberB;
+        int numberA;
+
         int surplus = 0;
-        int subtract = 0;
+        int subtract;
 
         for (indexB = b.length() - 1; indexB >= 0; --indexB) {
+
             numberA = a.charAt(indexA) - '0';
             numberB = b.charAt(indexB) - '0';
 
@@ -48,13 +50,14 @@ public class String17 {
             }else{
                 subtract = 10 + numberA - numberB - surplus;
             }
+
             surplus = numberA - numberB - surplus >= 0 ? 0 : 1;
 
-            strResult.append(Math.abs(subtract));
+            strResult.insert(0,Math.abs(subtract));
             indexA--;
 
         }
 
-        return !checkSign ? strResult.reverse().insert(0,'-').toString() : strResult.reverse().toString();
+        return !checkSign ? strResult.insert(0,'-').toString() : strResult.toString();
     }
 }
