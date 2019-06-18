@@ -13,7 +13,9 @@ public class ShapeFactory {
         this.listShape = new ArrayList<>();
 
         for (int i = 0; i < arrInfomation.length; i++) {
+
             double[] arrData = Arrays.stream(arrInfomation[i].split(" ")).mapToDouble(Double::parseDouble).toArray();
+
             if (arrData.length == 3) {
                 Circle circle = new Circle(arrData[0], arrData[1], arrData[2]);
                 listShape.add(circle);

@@ -36,6 +36,7 @@ public class QuadrilateralTest implements ShapeTest {
     @Test
     public void test_getArea() {
         assertEquals(new Quadrilateral(2, 4, 5, 4, 7, 8, 9, 5).getArea(), 187.67673220554184, 0.01);
+        assertEquals(new Quadrilateral(7, 8, 9, 5,2, 4, 5, 4).getArea(), 187.67673220554184, 0.01);
     }
 
     @Override
