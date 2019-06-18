@@ -1,42 +1,34 @@
 public class String16 {
 
+    private static int getDigit(String x, int fromLeft) {
+
+        if (fromLeft < x.length()) {
+            return x.charAt(x.length() - 1 - fromLeft) - '0';
+        }
+
+        return 0;
+    }
 
     public String getSum(String a, String b) {
 
-        if (a.length() > b.length()) {
-            String temp = a;
-            a = b;
-            b = temp;
-        }
-
-        StringBuffer strResult = new StringBuffer();
-
-        int indexA;
-        int indexB = b.length() - 1;
+        StringBuilder strResult = new StringBuilder();
 
         int surplus = 0;
-        int numberB = 0;
-        int numberA = 0;
-        int sum = 0;
 
-        for (indexA = a.length() - 1; indexA >= 0; --indexA) {
+        for (int i = 0; i < Math.max(a.length(), b.length()); i++) {
 
-            numberA = a.charAt(indexA) - '0';
-            numberB = b.charAt(indexB) - '0';
-
-            sum = numberA + numberB + surplus;
+            int sum = surplus + getDigit(a, i) + getDigit(b, i);
 
             surplus = sum / 10;
 
-            strResult.append(sum % 10);
-            indexB--;
+            strResult.insert(0, sum % 10);
         }
 
-        numberB = indexB >= 0 ? b.charAt(indexB--) - '0' : 0;
-        sum = surplus == 1 ? numberB + 1 : numberB;
-        strResult.append(sum % 10);
+        if (surplus > 0) {
+            strResult.insert(0, 1);
+        }
 
-        return strResult.append(b.substring(0, indexB + 1)).reverse().toString();
+        return strResult.toString();
     }
 
 }

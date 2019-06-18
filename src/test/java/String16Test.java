@@ -22,7 +22,7 @@ public class String16Test {
     public void test_getSum2(){
         String a = "123";
         String b = "456";
-        assertEquals(new String16().getSum(a,b),"0579");
+        assertEquals(new String16().getSum(a,b),"579");
     }
 
 
