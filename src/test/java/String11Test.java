@@ -6,15 +6,6 @@ import static org.junit.Assert.assertEquals;
 public class String11Test {
 
     @Test
-    public void test_isNumber(){
-        assertEquals(new String11().isNumber('0'),true);
-        assertEquals(new String11().isNumber('9'),true);
-        assertEquals(new String11().isNumber('8'),true);
-        assertEquals(new String11().isNumber('+'),false);
-        assertEquals(new String11().isNumber('A'),false);
-    }
-
-    @Test
     public void test_getResultFx(){
         String s = "20+30";
         assertEquals(new String11().getResultFx(s),50,0.01);

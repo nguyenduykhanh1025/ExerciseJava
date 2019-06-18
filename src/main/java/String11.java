@@ -1,20 +1,15 @@
 public class String11 {
 
-    public boolean isNumber(char i) {
-        return (i >= 48 && i <= 57) ? true : false;
-    }
-
-
     public double getResultFx(String fx) {
 
         int i = 0;
-        while (isNumber(fx.charAt(i))) {
+        while (Character.isDigit(fx.charAt(i))) {
             i++;
         }
 
         StringBuffer sign = new StringBuffer();
         sign.append(fx.charAt(i));
-        if (!isNumber(fx.charAt(i + 1))) {
+        if (!Character.isDigit(fx.charAt(i + 1))) {
             sign.append(fx.charAt(i + 1));
         }
 
