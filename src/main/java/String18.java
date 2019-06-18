@@ -2,53 +2,41 @@ public class String18 {
 
     public String addZero(String a, int countZero) {
         StringBuffer strATemp = new StringBuffer(a);
-        for (int i = 0; i < countZero; ++i) {
-            a = strATemp.append("0").toString();
-            strATemp = new StringBuffer(a);
+        for (int i = a.length(); i < countZero + a.length(); ++i) {
+            strATemp.insert(i, '0');
         }
-        return a;
+        return strATemp.toString();
     }
 
-    public int getSum(String a, String b) {
+    private static int getDigit(String x, int fromRight) {
 
-        if (a.length() > b.length()) {
-            String temp = a;
-            a = b;
-            b = temp;
+        if (fromRight < x.length()) {
+            return x.charAt(x.length() - 1 - fromRight) - '0';
         }
 
-        StringBuffer strResult = new StringBuffer("");
+        return 0;
+    }
 
-        int indexA;
-        int indexB = b.length() - 1;
+    public String getSum(String a, String b) {
+
+        StringBuilder strResult = new StringBuilder();
 
         int surplus = 0;
-        int numberB = 0;
-        int numberA = 0;
-        int sum = 0;
 
-        for (indexA = a.length() - 1; indexA >= 0; --indexA) {
+        for (int i = 0; i < Math.max(a.length(), b.length()); i++) {
 
-            numberA = a.charAt(indexA) - '0';
-            numberB = b.charAt(indexB) - '0';
-
-            sum = numberA + numberB + surplus;
+            int sum = surplus + getDigit(a, i) + getDigit(b, i);
 
             surplus = sum / 10;
 
-            strResult.append(sum % 10);
-            indexB--;
+            strResult.insert(0, sum % 10);
         }
 
-        numberB = indexB >= 0 ? b.charAt(indexB--) - '0' : 0;
-        sum = surplus == 1 ? numberB + 1 : numberB;
-        strResult.append(sum % 10);
-
-        for (int i = indexB; i >= 0; --i) {
-            strResult.append(b.charAt(i));
+        if (surplus > 0) {
+            strResult.insert(0, 1);
         }
 
-        return Integer.parseInt(strResult.reverse().toString());
+        return strResult.toString();
     }
 
     public String getMultiplication(String a, String b) {
@@ -57,7 +45,7 @@ public class String18 {
         for (int i = b.length() - 1; i >= 0; --i) {
 
             int numberB = b.charAt(i) - '0';
-            int numberA = 0;
+            int numberA;
             int surplus = 0;
 
             StringBuffer strResultTemp = new StringBuffer("");
@@ -75,8 +63,10 @@ public class String18 {
 
             String temp = strResultTemp.reverse().toString();
             temp = addZero(temp, b.length() - i - 1);
-            result = String.valueOf(getSum(temp, result));
+            result = getSum(temp, result);
+
         }
+
         return result;
     }
 }
