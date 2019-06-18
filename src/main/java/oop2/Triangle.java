@@ -53,13 +53,4 @@ public class Triangle implements Shape {
         this.x3 = x3;
         this.y3 = y3;
     }
-
-    public Triangle(Triangle triangle) {
-        this.x1 = triangle.x1;
-        this.x2 = triangle.x2;
-        this.x3 = triangle.x3;
-        this.y1 = triangle.y1;
-        this.y2 = triangle.y2;
-        this.y3 = triangle.y3;
-    }
 }
