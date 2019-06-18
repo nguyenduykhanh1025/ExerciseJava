@@ -1,7 +1,7 @@
 public class String18 {
 
     public String addZero(String a, int countZero) {
-        StringBuffer strATemp = new StringBuffer(a);
+        StringBuilder strATemp = new StringBuilder(a);
         for (int i = a.length(); i < countZero + a.length(); ++i) {
             strATemp.insert(i, '0');
         }
