@@ -1,9 +1,9 @@
 public class String16 {
 
-    private static int getDigit(String x, int fromLeft) {
+    private static int getDigit(String x, int fromRight) {
 
-        if (fromLeft < x.length()) {
-            return x.charAt(x.length() - 1 - fromLeft) - '0';
+        if (fromRight < x.length()) {
+            return x.charAt(x.length() - 1 - fromRight) - '0';
         }
 
         return 0;
