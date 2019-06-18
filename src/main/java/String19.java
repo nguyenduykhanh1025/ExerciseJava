@@ -9,7 +9,6 @@ public class String19 {
         return a;
     }
 
-
     public String getSubtraction(String a, String b) {
 
         int instance = a.length() - b.length();
