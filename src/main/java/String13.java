@@ -2,22 +2,20 @@ public class String13 {
 
     public boolean isSameString(String strA, String strB) {
 
-        if (strA.length() < strB.length()) {
-            String temp = strA;
-            strA = strB;
-            strB = temp;
+        if(strA.length() != strB.length()){
+            return false;
         }
 
-        String regex = "";
+        strA = strA.toLowerCase();
+        strB = strB.toLowerCase();
+
 
         for (int i = 0; i < strA.length(); ++i) {
 
-            regex = String.valueOf(strA.charAt(i));
-            String[] arr = strB.split(regex);
-
-            if (arr[0].equals(strB)) {
+            if (strB.indexOf(strA.charAt(i)) == -1) {
                 return false;
             }
+
         }
         return true;
     }
