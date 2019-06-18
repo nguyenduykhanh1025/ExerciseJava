@@ -53,7 +53,7 @@ public class String19 {
 
         }
 
-        return !checkSign ? "-" + strResult.toString() : strResult.toString();
+        return !checkSign ? strResult.insert(0,"-").toString() : strResult.toString();
     }
 
     public int getDivision(String a, String b) {
