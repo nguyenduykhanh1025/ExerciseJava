@@ -48,7 +48,7 @@ public class String19 {
 
             surplus = subtractTemp >= 0 ? 0 : 1;
 
-            strResult.insert(0, Math.abs(subtract));
+            strResult.insert(0, subtract);
             indexA--;
 
         }
