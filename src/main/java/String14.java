@@ -6,12 +6,12 @@ public class String14 {
 
         for (int i = 0; i < strData.length(); ++i) {
             if (i % 2 == 0) {
-                sum += Integer.parseInt(String.valueOf(strData.charAt(i)));
+                sum += strData.charAt(i) - '0';
             } else {
-                sum += 3 * Integer.parseInt(String.valueOf(strData.charAt(i)));
+                sum += 3 * (strData.charAt(i) - '0');
             }
         }
 
-        return sum % 10 == 0 ? true : false;
+        return sum % 10 == 0;
     }
 }
