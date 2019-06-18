@@ -2,20 +2,19 @@ public class String12 {
 
     public String deleteDuplicateInString(String str) {
 
-        StringBuffer strTemp = new StringBuffer("");
-
-        for (int i = 1; i < str.length(); ++i) {
-            if (str.charAt(i) == str.charAt(i - 1)) {
-
-                strTemp.append(str.substring(0, i - 1));
-                strTemp.append(str.substring(i, str.length()));
-
-                str = strTemp.toString();
-                strTemp = new StringBuffer("");
-                i = i - 1;
+        StringBuilder strResult = new StringBuilder();
+        
+        strResult.append(str.charAt(0));
+        
+        for (int i = 0; i < str.length() - 1; ++i) {
+            
+            if (str.charAt(i) != str.charAt(i + 1)) {
+                strResult.append(str.charAt(i + 1));
             }
+            
         }
-        return str;
+        
+        return strResult.toString();
     }
 
 }
