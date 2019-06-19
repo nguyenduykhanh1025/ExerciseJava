@@ -27,7 +27,7 @@ public class Quadrilateral implements Shape {
         double s1 = triangle11.getArea() + triangle12.getArea();
         double s2 = triangle21.getArea() + triangle22.getArea();
 
-        return s1 > s2 ? s2 : s1;
+        return Math.min(s1,s2);
     }
 
     @Override
