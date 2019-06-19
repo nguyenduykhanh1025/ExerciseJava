@@ -44,6 +44,4 @@ public class QuadrilateralTest implements ShapeTest {
     public void test_getPerimeter() {
         assertEquals(new Quadrilateral(2, 4, 5, 4, 7, 8, 9, 5).getPerimeter(), 18.148755042329043, 0.01);
     }
-
-
 }
