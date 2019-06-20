@@ -184,79 +184,79 @@ public class StudentControllerTest {
         assertEquals(new StudentController(students).findByClassName("adu").size(),0);
     }
 
-    @Test
-    public void test_saveToFile() throws IOException {
-        Student student = new Student.StudentBuilder()
-                .setId(1).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+//    @Test
+//    public void test_saveToFile() throws IOException {
+//        Student student = new Student.StudentBuilder()
+//                .setId(1).setClassName("19").setBirthday("20/12/1998")
+//                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+//
+//        Student student1 = new Student.StudentBuilder()
+//                .setId(2).setClassName("19").setBirthday("20/12/1998")
+//                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+//
+//        Student student2 = new Student.StudentBuilder()
+//                .setId(3).setClassName("19").setBirthday("20/12/1998")
+//                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+//
+//        List<Student> students = new ArrayList<>();
+//        students.add(student);
+//        students.add(student1);
+//        students.add(student2);
+//
+//        new StudentController(students).saveToFile(Common.path);
+//    }
+//
+//    @Test(expected = IOException.class)
+//    public void test_saveToFile2() throws IOException {
+//        Student student = new Student.StudentBuilder()
+//                .setId(1).setClassName("19").setBirthday("20/12/1998")
+//                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+//
+//        Student student1 = new Student.StudentBuilder()
+//                .setId(2).setClassName("19").setBirthday("20/12/1998")
+//                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+//
+//        Student student2 = new Student.StudentBuilder()
+//                .setId(3).setClassName("19").setBirthday("20/12/1998")
+//                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+//
+//        List<Student> students = new ArrayList<>();
+//        students.add(student);
+//        students.add(student1);
+//        students.add(student2);
+//
+//        new StudentController(students).saveToFile("");
+//    }
+//
+//    @Test
+//    public void test_getStudents(){
+//        Student student = new Student.StudentBuilder()
+//                .setId(1).setClassName("19").setBirthday("20/12/1998")
+//                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+//
+//        Student student1 = new Student.StudentBuilder()
+//                .setId(2).setClassName("19").setBirthday("20/12/1998")
+//                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+//
+//        Student student2 = new Student.StudentBuilder()
+//                .setId(3).setClassName("19").setBirthday("20/12/1998")
+//                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+//
+//        List<Student> students = new ArrayList<>();
+//        students.add(student);
+//        students.add(student1);
+//        students.add(student2);
+//
+//        assertEquals(new StudentController(students).getStudents().size(),3);
+//    }
 
-        Student student1 = new Student.StudentBuilder()
-                .setId(2).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
-
-        Student student2 = new Student.StudentBuilder()
-                .setId(3).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
-
-        List<Student> students = new ArrayList<>();
-        students.add(student);
-        students.add(student1);
-        students.add(student2);
-
-        new StudentController(students).saveToFile(Common.path);
-    }
-
-    @Test(expected = IOException.class)
-    public void test_saveToFile2() throws IOException {
-        Student student = new Student.StudentBuilder()
-                .setId(1).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
-
-        Student student1 = new Student.StudentBuilder()
-                .setId(2).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
-
-        Student student2 = new Student.StudentBuilder()
-                .setId(3).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
-
-        List<Student> students = new ArrayList<>();
-        students.add(student);
-        students.add(student1);
-        students.add(student2);
-
-        new StudentController(students).saveToFile("");
-    }
-
-    @Test
-    public void test_getStudents(){
-        Student student = new Student.StudentBuilder()
-                .setId(1).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
-
-        Student student1 = new Student.StudentBuilder()
-                .setId(2).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
-
-        Student student2 = new Student.StudentBuilder()
-                .setId(3).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
-
-        List<Student> students = new ArrayList<>();
-        students.add(student);
-        students.add(student1);
-        students.add(student2);
-
-        assertEquals(new StudentController(students).getStudents().size(),3);
-    }
-
-    @Test
-    public void test_loadFromFile() throws IOException {
-        new StudentController().loadFromFile(Common.path);
-    }
-
-    @Test(expected = IOException.class)
-    public void test_loadFromFile2() throws IOException {
-        new StudentController().loadFromFile("");
-    }
+//    @Test
+//    public void test_loadFromFile() throws IOException {
+//        new StudentController().loadFromFile(Common.path);
+//    }
+//
+//    @Test(expected = IOException.class)
+//    public void test_loadFromFile2() throws IOException {
+//        new StudentController().loadFromFile("");
+//    }
 }

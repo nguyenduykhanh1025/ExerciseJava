@@ -73,6 +73,7 @@ public class StudentController {
     }
 
     public void loadFromFile(String path) throws IOException {
+
         Gson jsonArray = new Gson();
         FileInputStream fis = new FileInputStream(path);
         DataInputStream dis = new DataInputStream(fis);
