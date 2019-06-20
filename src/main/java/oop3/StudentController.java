@@ -58,50 +58,31 @@ public class StudentController {
         return resultListStudent;
     }
 
-    public boolean saveToFile(String path) {
-        try {
-            FileOutputStream fos = new FileOutputStream(path);
-            DataOutputStream dos = new DataOutputStream(fos);
-            Gson jsonArray = new Gson();
+    public void saveToFile(String path) throws IOException {
 
-            String gsonData = jsonArray.toJson(students);
+        FileOutputStream fos = new FileOutputStream(path);
+        DataOutputStream dos = new DataOutputStream(fos);
+        Gson jsonArray = new Gson();
 
-            try {
-                dos.writeUTF(gsonData);
+        String gsonData = jsonArray.toJson(students);
 
-                dos.close();
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } catch (FileNotFoundException e) {
-            return false;
-        }
-        return true;
+        dos.writeUTF(gsonData);
+
+        dos.close();
+        fos.close();
     }
 
-    public boolean loadFromFile(String path) {
-        try {
+    public void loadFromFile(String path) throws IOException {
+        Gson jsonArray = new Gson();
+        FileInputStream fis = new FileInputStream(path);
+        DataInputStream dis = new DataInputStream(fis);
 
-            Gson jsonArray = new Gson();
-            FileInputStream fis = new FileInputStream(path);
-            DataInputStream dis = new DataInputStream(fis);
+        String data = dis.readUTF();
+        Student[] studentArr = jsonArray.fromJson(data, Student[].class);
+        this.students = new ArrayList<>(Arrays.asList(studentArr));
 
-            try {
-
-                String data = dis.readUTF();
-                Student[] studentArr = jsonArray.fromJson(data, Student[].class);
-                this.students = new ArrayList<>(Arrays.asList(studentArr));
-
-                dis.close();
-                fis.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } catch (FileNotFoundException e) {
-            return false;
-        }
-        return true;
+        dis.close();
+        fis.close();
     }
 
     public StudentController(List<Student> students) {
