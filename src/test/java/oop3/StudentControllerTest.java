@@ -309,17 +309,35 @@ public class StudentControllerTest {
 
     @Test
     public void test_saveToFile() throws IOException {
-        Student student = new Student.StudentBuilder()
-                .setId(1).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+        Student student = new Student
+                .StudentBuilder()
+                .setId(1)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh")
+                .setLastName("nguyen")
+                .build();
 
-        Student student1 = new Student.StudentBuilder()
-                .setId(2).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+        Student student1 = new Student
+                .StudentBuilder()
+                .setId(2)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh")
+                .setLastName("nguyen")
+                .build();
 
-        Student student2 = new Student.StudentBuilder()
-                .setId(3).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+        Student student2 = new Student
+                .StudentBuilder()
+                .setId(3)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh")
+                .setLastName("nguyen")
+                .build();
 
         List<Student> students = new ArrayList<>();
         students.add(student);
@@ -331,17 +349,35 @@ public class StudentControllerTest {
 
     @Test(expected = IOException.class)
     public void test_saveToFile2() throws IOException {
-        Student student = new Student.StudentBuilder()
-                .setId(1).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+        Student student = new Student
+                .StudentBuilder()
+                .setId(1)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh")
+                .setLastName("nguyen")
+                .build();
 
-        Student student1 = new Student.StudentBuilder()
-                .setId(2).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+        Student student1 = new Student
+                .StudentBuilder()
+                .setId(2)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh")
+                .setLastName("nguyen")
+                .build();
 
-        Student student2 = new Student.StudentBuilder()
-                .setId(3).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+        Student student2 = new Student
+                .StudentBuilder()
+                .setId(3)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh")
+                .setLastName("nguyen")
+                .build();
 
         List<Student> students = new ArrayList<>();
         students.add(student);
@@ -353,17 +389,35 @@ public class StudentControllerTest {
 
     @Test
     public void test_getStudents() {
-        Student student = new Student.StudentBuilder()
-                .setId(1).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+        Student student = new Student
+                .StudentBuilder()
+                .setId(1)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh"
+                ).setLastName("nguyen")
+                .build();
 
-        Student student1 = new Student.StudentBuilder()
-                .setId(2).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+        Student student1 = new Student
+                .StudentBuilder()
+                .setId(2)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh")
+                .setLastName("nguyen")
+                .build();
 
-        Student student2 = new Student.StudentBuilder()
-                .setId(3).setClassName("19").setBirthday("20/12/1998")
-                .setAddress("A").setFirstName("khanh").setLastName("nguyen").build();
+        Student student2 = new Student
+                .StudentBuilder()
+                .setId(3)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh")
+                .setLastName("nguyen")
+                .build();
 
         List<Student> students = new ArrayList<>();
         students.add(student);
