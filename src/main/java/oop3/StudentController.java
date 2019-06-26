@@ -1,16 +1,12 @@
 package oop3;
 
-import com.google.gson.Gson;
-
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class StudentController {
 
     private List<Student> students;
-
 
     public void addStudent(Student student) {
         this.students.add(student);
@@ -58,11 +54,10 @@ public class StudentController {
 
         FileOutputStream fos = new FileOutputStream(path);
         DataOutputStream dos = new DataOutputStream(fos);
-        Gson jsonArray = new Gson();
 
-        String gsonData = jsonArray.toJson(students);
+        StudentContainer studentContainer = new StudentContainer(students);
 
-        dos.writeUTF(gsonData);
+        dos.writeUTF(studentContainer.toJson());
 
         dos.close();
         fos.close();
@@ -70,13 +65,12 @@ public class StudentController {
 
     public void loadFromFile(String path) throws IOException {
 
-        Gson jsonArray = new Gson();
         FileInputStream fis = new FileInputStream(path);
         DataInputStream dis = new DataInputStream(fis);
 
-        String data = dis.readUTF();
-        Student[] studentArr = jsonArray.fromJson(data, Student[].class);
-        this.students = new ArrayList<>(Arrays.asList(studentArr));
+        String json = dis.readUTF();
+
+        this.students = StudentContainer.fromJson(json).getStudents();
 
         dis.close();
         fis.close();
