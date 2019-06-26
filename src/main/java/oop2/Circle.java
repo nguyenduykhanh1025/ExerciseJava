@@ -8,7 +8,7 @@ public class Circle implements Shape {
 
     @Override
     public String showInfo() {
-        return "Circle";
+        return "Circle " + x + " " + y + " " + r;
     }
 
     @Override

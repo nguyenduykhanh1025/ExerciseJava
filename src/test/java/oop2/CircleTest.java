@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class CircleTest implements ShapeTest {
     @Test
     public void test_showInfo() {
-        assertEquals(new Circle(1, 2, 3).showInfo(), "Circle");
+        assertEquals(new Circle(1, 2, 3).showInfo(), "Circle " + 1.0 + " " + 2.0 + " " + 3.0);
     }
 
     @Test
