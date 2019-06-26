@@ -91,6 +91,14 @@ public class StudentControllerTest {
     }
 
     @Test
+    public void test_deleteStudent2() {
+        StudentController studentController = createControllerWithData();
+        studentController.deleteStudent(4);
+
+        assertEquals(studentController.getStudents().size(), 3);
+    }
+
+    @Test
     public void test_getStudents() {
         assertEquals(createControllerWithData().getStudents().size(), 3);
     }
