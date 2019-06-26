@@ -15,10 +15,6 @@ public class StudentContainer {
         return students;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
-    }
-
     public static StudentContainer fromJson(String json){
         Gson gson = new Gson();
         return gson.fromJson(json, StudentContainer.class);
