@@ -72,6 +72,45 @@ public class StudentControllerTest {
         assertEquals(studentController.getStudents().size(), 2);
     }
 
+    @Test
+    public void test_getStudents() {
+        Student student = new Student
+                .StudentBuilder()
+                .setId(1)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh"
+                ).setLastName("nguyen")
+                .build();
+
+        Student student1 = new Student
+                .StudentBuilder()
+                .setId(2)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh")
+                .setLastName("nguyen")
+                .build();
+
+        Student student2 = new Student
+                .StudentBuilder()
+                .setId(3)
+                .setClassName("19")
+                .setBirthday("20/12/1998")
+                .setAddress("A")
+                .setFirstName("khanh")
+                .setLastName("nguyen")
+                .build();
+
+        List<Student> students = new ArrayList<>();
+        students.add(student);
+        students.add(student1);
+        students.add(student2);
+
+        assertEquals(new StudentController(students).getStudents().size(), 3);
+    }
 
     @Test
     public void test_getById() {
@@ -386,47 +425,6 @@ public class StudentControllerTest {
 
         new StudentController(students).saveToFile("");
     }
-
-    @Test
-    public void test_getStudents() {
-        Student student = new Student
-                .StudentBuilder()
-                .setId(1)
-                .setClassName("19")
-                .setBirthday("20/12/1998")
-                .setAddress("A")
-                .setFirstName("khanh"
-                ).setLastName("nguyen")
-                .build();
-
-        Student student1 = new Student
-                .StudentBuilder()
-                .setId(2)
-                .setClassName("19")
-                .setBirthday("20/12/1998")
-                .setAddress("A")
-                .setFirstName("khanh")
-                .setLastName("nguyen")
-                .build();
-
-        Student student2 = new Student
-                .StudentBuilder()
-                .setId(3)
-                .setClassName("19")
-                .setBirthday("20/12/1998")
-                .setAddress("A")
-                .setFirstName("khanh")
-                .setLastName("nguyen")
-                .build();
-
-        List<Student> students = new ArrayList<>();
-        students.add(student);
-        students.add(student1);
-        students.add(student2);
-
-        assertEquals(new StudentController(students).getStudents().size(), 3);
-    }
-
     @Test
     public void test_loadFromFile() throws IOException {
         new StudentController().loadFromFile(Common.path);
