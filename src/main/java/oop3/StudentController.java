@@ -12,21 +12,17 @@ public class StudentController {
     private List<Student> students;
 
 
-    public List<Student> addStudent(Student student) {
+    public void addStudent(Student student) {
         this.students.add(student);
-        return this.students;
     }
 
-    public List<Student> deleteStudent(int id) {
-        if (students.size() != 0) {
-            for (Student student : students) {
-                if (student.getId() == id) {
-                    this.students.remove(student);
-                    return this.students;
-                }
+    public void deleteStudent(int id) {
+        for (Student student : students) {
+            if (student.getId() == id) {
+                this.students.remove(student);
+                break;
             }
         }
-        return null;
     }
 
     public Student getById(int id) {
@@ -41,7 +37,7 @@ public class StudentController {
     public List<Student> findByName(String name) {
         List<Student> resultListStudent = new ArrayList<>();
         for (Student student : students) {
-            if (student.getFirstName().equals(name)) {
+            if ((student.getFirstName() + " " + student.getLastName()).equals(name)) {
                 resultListStudent.add(student);
             }
         }
