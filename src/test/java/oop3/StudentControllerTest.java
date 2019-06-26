@@ -16,7 +16,8 @@ public class StudentControllerTest {
 
     @Before
     public void init(){
-        Student student = new Student.StudentBuilder()
+        Student student = new Student
+                .StudentBuilder()
                 .setId(1)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
@@ -26,8 +27,8 @@ public class StudentControllerTest {
                 .build();
 
         Student student1 = new Student
-                .StudentBuilder().
-                setId(2)
+                .StudentBuilder()
+                .setId(2)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -35,7 +36,8 @@ public class StudentControllerTest {
                 .setLastName("nguyen")
                 .build();
 
-        Student student2 = new Student.StudentBuilder()
+        Student student2 = new Student
+                .StudentBuilder()
                 .setId(3).setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -51,7 +53,8 @@ public class StudentControllerTest {
     }
     @Test
     public void test_addStudent(){
-        Student student2 = new Student.StudentBuilder()
+        Student student2 = new Student
+                .StudentBuilder()
                 .setId(3).setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -71,7 +74,8 @@ public class StudentControllerTest {
 
     @Test
     public void test_getById(){
-        Student student = new Student.StudentBuilder()
+        Student student = new Student
+                .StudentBuilder()
                 .setId(1)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
@@ -81,8 +85,8 @@ public class StudentControllerTest {
                 .build();
 
         Student student1 = new Student
-                .StudentBuilder().
-                setId(2)
+                .StudentBuilder()
+                .setId(2)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -90,7 +94,8 @@ public class StudentControllerTest {
                 .setLastName("nguyen")
                 .build();
 
-        Student student2 = new Student.StudentBuilder()
+        Student student2 = new Student
+                .StudentBuilder()
                 .setId(3).setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -108,7 +113,8 @@ public class StudentControllerTest {
 
     @Test
     public void test_getById2(){
-        Student student = new Student.StudentBuilder()
+        Student student = new Student
+                .StudentBuilder()
                 .setId(1)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
@@ -118,8 +124,8 @@ public class StudentControllerTest {
                 .build();
 
         Student student1 = new Student
-                .StudentBuilder().
-                setId(2)
+                .StudentBuilder()
+                .setId(2)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -127,7 +133,8 @@ public class StudentControllerTest {
                 .setLastName("nguyen")
                 .build();
 
-        Student student2 = new Student.StudentBuilder()
+        Student student2 = new Student
+                .StudentBuilder()
                 .setId(3).setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -145,7 +152,8 @@ public class StudentControllerTest {
 
     @Test
     public void test_findByName(){
-        Student student = new Student.StudentBuilder()
+        Student student = new Student
+                .StudentBuilder()
                 .setId(1)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
@@ -155,8 +163,8 @@ public class StudentControllerTest {
                 .build();
 
         Student student1 = new Student
-                .StudentBuilder().
-                setId(2)
+                .StudentBuilder()
+                .setId(2)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -164,7 +172,8 @@ public class StudentControllerTest {
                 .setLastName("nguyen")
                 .build();
 
-        Student student2 = new Student.StudentBuilder()
+        Student student2 = new Student
+                .StudentBuilder()
                 .setId(3).setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -182,7 +191,8 @@ public class StudentControllerTest {
 
     @Test
     public void test_findByName2(){
-        Student student = new Student.StudentBuilder()
+        Student student = new Student
+                .StudentBuilder()
                 .setId(1)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
@@ -192,8 +202,8 @@ public class StudentControllerTest {
                 .build();
 
         Student student1 = new Student
-                .StudentBuilder().
-                setId(2)
+                .StudentBuilder()
+                .setId(2)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -201,7 +211,8 @@ public class StudentControllerTest {
                 .setLastName("nguyen")
                 .build();
 
-        Student student2 = new Student.StudentBuilder()
+        Student student2 = new Student
+                .StudentBuilder()
                 .setId(3).setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -219,7 +230,8 @@ public class StudentControllerTest {
 
     @Test
     public void test_findByClassName(){
-        Student student = new Student.StudentBuilder()
+        Student student = new Student
+                .StudentBuilder()
                 .setId(1)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
@@ -229,8 +241,8 @@ public class StudentControllerTest {
                 .build();
 
         Student student1 = new Student
-                .StudentBuilder().
-                setId(2)
+                .StudentBuilder()
+                .setId(2)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -238,7 +250,8 @@ public class StudentControllerTest {
                 .setLastName("nguyen")
                 .build();
 
-        Student student2 = new Student.StudentBuilder()
+        Student student2 = new Student
+                .StudentBuilder()
                 .setId(3).setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -256,7 +269,8 @@ public class StudentControllerTest {
 
     @Test
     public void test_findByClassName2(){
-        Student student = new Student.StudentBuilder()
+        Student student = new Student
+                .StudentBuilder()
                 .setId(1)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
@@ -266,8 +280,8 @@ public class StudentControllerTest {
                 .build();
 
         Student student1 = new Student
-                .StudentBuilder().
-                setId(2)
+                .StudentBuilder()
+                .setId(2)
                 .setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
@@ -275,7 +289,8 @@ public class StudentControllerTest {
                 .setLastName("nguyen")
                 .build();
 
-        Student student2 = new Student.StudentBuilder()
+        Student student2 = new Student
+                .StudentBuilder()
                 .setId(3).setClassName("19")
                 .setBirthday("20/12/1998")
                 .setAddress("A")
