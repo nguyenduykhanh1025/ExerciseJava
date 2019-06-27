@@ -1,1 +1,0 @@
-9[{"id":1,"firstName":"khanh","lastName":"nguyen","birthday":"20/12/1998","className":"19","address":"A"},{"id":2,"firstName":"khanh","lastName":"nguyen","birthday":"20/12/1998","className":"19","address":"A"},{"id":3,"firstName":"khanh","lastName":"nguyen","birthday":"20/12/1998","className":"19","address":"A"}]
